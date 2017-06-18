@@ -1,0 +1,808 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0597DB7A51E33E1880881D42 /* Pods_beautyiosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E24B41FCE72D69D09C7CB4 /* Pods_beautyiosTests.framework */; };
+		4C145C9B1EF67262008A284F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145C9A1EF67262008A284F /* AppDelegate.swift */; };
+		4C145C9D1EF67262008A284F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145C9C1EF67262008A284F /* ViewController.swift */; };
+		4C145CA01EF67262008A284F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C145C9E1EF67262008A284F /* Main.storyboard */; };
+		4C145CA51EF67262008A284F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C145CA31EF67262008A284F /* LaunchScreen.storyboard */; };
+		4C145CF21EF67CDA008A284F /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145CEF1EF67CDA008A284F /* ForgotPasswordViewController.swift */; };
+		4C145CF31EF67CDA008A284F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145CF01EF67CDA008A284F /* LoginViewController.swift */; };
+		4C145CF41EF67CDA008A284F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145CF11EF67CDA008A284F /* SignUpViewController.swift */; };
+		4C145CF61EF67E57008A284F /* beautyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145CF51EF67E57008A284F /* beautyTheme.swift */; };
+		4C145CF81EF67F47008A284F /* beautyServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145CF71EF67F47008A284F /* beautyServer.swift */; };
+		4C145CFE1EF680D8008A284F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145CFD1EF680D8008A284F /* User.swift */; };
+		4C145D001EF68330008A284F /* AuthControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145CFF1EF68330008A284F /* AuthControllers.swift */; };
+		4C145D021EF683AC008A284F /* beautyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145D011EF683AC008A284F /* beautyObject.swift */; };
+		4C145D061EF6B976008A284F /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145D051EF6B976008A284F /* DBHelper.swift */; };
+		4C145D0A1EF6E0FD008A284F /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145D091EF6E0FD008A284F /* Toast.swift */; };
+		4C145D0C1EF6E1CE008A284F /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145D0B1EF6E1CE008A284F /* StoreViewController.swift */; };
+		4C145D0E1EF6F0EF008A284F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C145D0D1EF6F0EF008A284F /* Assets.xcassets */; };
+		8364772344835106881DBAE0 /* Pods_beautyios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 513B49596FF41373F7EB02B8 /* Pods_beautyios.framework */; };
+		FF82CD0CE9C2A9FCD9320AA4 /* Pods_beautyiosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0A9AFCD6C2A62BCEA25DAB /* Pods_beautyiosUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C145CAC1EF67262008A284F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C145C8F1EF67262008A284F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C145C961EF67262008A284F;
+			remoteInfo = beautyios;
+		};
+		4C145CB71EF67262008A284F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C145C8F1EF67262008A284F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C145C961EF67262008A284F;
+			remoteInfo = beautyios;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0FB66F1090848D8FF4980543 /* Pods-beautyiosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beautyiosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beautyiosTests/Pods-beautyiosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		16E24B41FCE72D69D09C7CB4 /* Pods_beautyiosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beautyiosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49403E11A1AF6F0BBA605EF8 /* Pods-beautyiosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beautyiosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beautyiosUITests/Pods-beautyiosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4C145C971EF67262008A284F /* beautyios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beautyios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C145C9A1EF67262008A284F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4C145C9C1EF67262008A284F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4C145C9F1EF67262008A284F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C145CA41EF67262008A284F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4C145CA61EF67262008A284F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C145CAB1EF67262008A284F /* beautyiosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = beautyiosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C145CB61EF67262008A284F /* beautyiosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = beautyiosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C145CEF1EF67CDA008A284F /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		4C145CF01EF67CDA008A284F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4C145CF11EF67CDA008A284F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		4C145CF51EF67E57008A284F /* beautyTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = beautyTheme.swift; path = Utils/beautyTheme.swift; sourceTree = "<group>"; };
+		4C145CF71EF67F47008A284F /* beautyServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beautyServer.swift; sourceTree = "<group>"; };
+		4C145CFD1EF680D8008A284F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		4C145CFF1EF68330008A284F /* AuthControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthControllers.swift; sourceTree = "<group>"; };
+		4C145D011EF683AC008A284F /* beautyObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = beautyObject.swift; path = Models/beautyObject.swift; sourceTree = "<group>"; };
+		4C145D051EF6B976008A284F /* DBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBHelper.swift; path = Utils/DBHelper.swift; sourceTree = "<group>"; };
+		4C145D091EF6E0FD008A284F /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Views/Toast.swift; sourceTree = "<group>"; };
+		4C145D0B1EF6E1CE008A284F /* StoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreViewController.swift; path = Main/StoreViewController.swift; sourceTree = "<group>"; };
+		4C145D0D1EF6F0EF008A284F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		507DE4A3D124823617EE90AB /* Pods-beautyios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beautyios.release.xcconfig"; path = "Pods/Target Support Files/Pods-beautyios/Pods-beautyios.release.xcconfig"; sourceTree = "<group>"; };
+		513B49596FF41373F7EB02B8 /* Pods_beautyios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beautyios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		806627D4228EC8A546ADACA2 /* Pods-beautyiosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beautyiosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beautyiosTests/Pods-beautyiosTests.release.xcconfig"; sourceTree = "<group>"; };
+		8A0A9AFCD6C2A62BCEA25DAB /* Pods_beautyiosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beautyiosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3A63A82DC7B9A0DACC825E1 /* Pods-beautyios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beautyios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-beautyios/Pods-beautyios.debug.xcconfig"; sourceTree = "<group>"; };
+		FE97D20E43B0DA244964E083 /* Pods-beautyiosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beautyiosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beautyiosUITests/Pods-beautyiosUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C145C941EF67262008A284F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8364772344835106881DBAE0 /* Pods_beautyios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C145CA81EF67262008A284F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0597DB7A51E33E1880881D42 /* Pods_beautyiosTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C145CB31EF67262008A284F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF82CD0CE9C2A9FCD9320AA4 /* Pods_beautyiosUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C145C8E1EF67262008A284F = {
+			isa = PBXGroup;
+			children = (
+				4C145C991EF67262008A284F /* beautyios */,
+				4C145C981EF67262008A284F /* Products */,
+				6CC4B7E60E76A046C7CBDAE1 /* Pods */,
+				B84C29DC5D0E7D4ADD9C66D3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4C145C981EF67262008A284F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C145C971EF67262008A284F /* beautyios.app */,
+				4C145CAB1EF67262008A284F /* beautyiosTests.xctest */,
+				4C145CB61EF67262008A284F /* beautyiosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C145C991EF67262008A284F /* beautyios */ = {
+			isa = PBXGroup;
+			children = (
+				4C145D081EF6E0DD008A284F /* Views */,
+				4C145CFC1EF680AA008A284F /* Models */,
+				4C145CF91EF67F62008A284F /* Controllers */,
+				4C145CED1EF67CDA008A284F /* ViewControllers */,
+				4C145CEC1EF67C67008A284F /* Utils */,
+				4C145CEB1EF67C27008A284F /* Resources */,
+				4C145C9A1EF67262008A284F /* AppDelegate.swift */,
+				4C145C9C1EF67262008A284F /* ViewController.swift */,
+			);
+			path = beautyios;
+			sourceTree = "<group>";
+		};
+		4C145CEB1EF67C27008A284F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C145D0D1EF6F0EF008A284F /* Assets.xcassets */,
+				4C145C9E1EF67262008A284F /* Main.storyboard */,
+				4C145CA31EF67262008A284F /* LaunchScreen.storyboard */,
+				4C145CA61EF67262008A284F /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4C145CEC1EF67C67008A284F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4C145CF51EF67E57008A284F /* beautyTheme.swift */,
+				4C145D051EF6B976008A284F /* DBHelper.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		4C145CED1EF67CDA008A284F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C145D071EF6DEC9008A284F /* Main */,
+				4C145CEE1EF67CDA008A284F /* Auth */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4C145CEE1EF67CDA008A284F /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				4C145CEF1EF67CDA008A284F /* ForgotPasswordViewController.swift */,
+				4C145CF01EF67CDA008A284F /* LoginViewController.swift */,
+				4C145CF11EF67CDA008A284F /* SignUpViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		4C145CF91EF67F62008A284F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C145CF71EF67F47008A284F /* beautyServer.swift */,
+				4C145CFF1EF68330008A284F /* AuthControllers.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4C145CFC1EF680AA008A284F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C145CFD1EF680D8008A284F /* User.swift */,
+				4C145D011EF683AC008A284F /* beautyObject.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4C145D071EF6DEC9008A284F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4C145D0B1EF6E1CE008A284F /* StoreViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		4C145D081EF6E0DD008A284F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C145D091EF6E0FD008A284F /* Toast.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		6CC4B7E60E76A046C7CBDAE1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A3A63A82DC7B9A0DACC825E1 /* Pods-beautyios.debug.xcconfig */,
+				507DE4A3D124823617EE90AB /* Pods-beautyios.release.xcconfig */,
+				0FB66F1090848D8FF4980543 /* Pods-beautyiosTests.debug.xcconfig */,
+				806627D4228EC8A546ADACA2 /* Pods-beautyiosTests.release.xcconfig */,
+				49403E11A1AF6F0BBA605EF8 /* Pods-beautyiosUITests.debug.xcconfig */,
+				FE97D20E43B0DA244964E083 /* Pods-beautyiosUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B84C29DC5D0E7D4ADD9C66D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				513B49596FF41373F7EB02B8 /* Pods_beautyios.framework */,
+				16E24B41FCE72D69D09C7CB4 /* Pods_beautyiosTests.framework */,
+				8A0A9AFCD6C2A62BCEA25DAB /* Pods_beautyiosUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C145C961EF67262008A284F /* beautyios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C145CBF1EF67262008A284F /* Build configuration list for PBXNativeTarget "beautyios" */;
+			buildPhases = (
+				B644C073CFCC51687679C871 /* [CP] Check Pods Manifest.lock */,
+				4C145C931EF67262008A284F /* Sources */,
+				4C145C941EF67262008A284F /* Frameworks */,
+				4C145C951EF67262008A284F /* Resources */,
+				D0DFB354487E99FC87177613 /* [CP] Embed Pods Frameworks */,
+				676A91E4945E03F8D84E1D7A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = beautyios;
+			productName = beautyios;
+			productReference = 4C145C971EF67262008A284F /* beautyios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C145CAA1EF67262008A284F /* beautyiosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C145CC21EF67262008A284F /* Build configuration list for PBXNativeTarget "beautyiosTests" */;
+			buildPhases = (
+				591038BA11E51BA64C306E65 /* [CP] Check Pods Manifest.lock */,
+				4C145CA71EF67262008A284F /* Sources */,
+				4C145CA81EF67262008A284F /* Frameworks */,
+				4C145CA91EF67262008A284F /* Resources */,
+				CBA045F5AF5CDDD17C1876C8 /* [CP] Embed Pods Frameworks */,
+				F1FA32BF6024123EB8CFD62E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C145CAD1EF67262008A284F /* PBXTargetDependency */,
+			);
+			name = beautyiosTests;
+			productName = beautyiosTests;
+			productReference = 4C145CAB1EF67262008A284F /* beautyiosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4C145CB51EF67262008A284F /* beautyiosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C145CC51EF67262008A284F /* Build configuration list for PBXNativeTarget "beautyiosUITests" */;
+			buildPhases = (
+				9ED2D569A9C479574519DA62 /* [CP] Check Pods Manifest.lock */,
+				4C145CB21EF67262008A284F /* Sources */,
+				4C145CB31EF67262008A284F /* Frameworks */,
+				4C145CB41EF67262008A284F /* Resources */,
+				FB22BA3673EAEE9BC2CA5D0F /* [CP] Embed Pods Frameworks */,
+				B4ED7CAC6B3D65485BE71E9F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C145CB81EF67262008A284F /* PBXTargetDependency */,
+			);
+			name = beautyiosUITests;
+			productName = beautyiosUITests;
+			productReference = 4C145CB61EF67262008A284F /* beautyiosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C145C8F1EF67262008A284F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Michael;
+				TargetAttributes = {
+					4C145C961EF67262008A284F = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+					};
+					4C145CAA1EF67262008A284F = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4C145C961EF67262008A284F;
+					};
+					4C145CB51EF67262008A284F = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4C145C961EF67262008A284F;
+					};
+				};
+			};
+			buildConfigurationList = 4C145C921EF67262008A284F /* Build configuration list for PBXProject "beautyios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C145C8E1EF67262008A284F;
+			productRefGroup = 4C145C981EF67262008A284F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C145C961EF67262008A284F /* beautyios */,
+				4C145CAA1EF67262008A284F /* beautyiosTests */,
+				4C145CB51EF67262008A284F /* beautyiosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C145C951EF67262008A284F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C145CA51EF67262008A284F /* LaunchScreen.storyboard in Resources */,
+				4C145D0E1EF6F0EF008A284F /* Assets.xcassets in Resources */,
+				4C145CA01EF67262008A284F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C145CA91EF67262008A284F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C145CB41EF67262008A284F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		591038BA11E51BA64C306E65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		676A91E4945E03F8D84E1D7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beautyios/Pods-beautyios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9ED2D569A9C479574519DA62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B4ED7CAC6B3D65485BE71E9F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beautyiosUITests/Pods-beautyiosUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B644C073CFCC51687679C871 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CBA045F5AF5CDDD17C1876C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beautyiosTests/Pods-beautyiosTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0DFB354487E99FC87177613 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beautyios/Pods-beautyios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1FA32BF6024123EB8CFD62E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beautyiosTests/Pods-beautyiosTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB22BA3673EAEE9BC2CA5D0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-beautyiosUITests/Pods-beautyiosUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C145C931EF67262008A284F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C145D061EF6B976008A284F /* DBHelper.swift in Sources */,
+				4C145D0A1EF6E0FD008A284F /* Toast.swift in Sources */,
+				4C145CF31EF67CDA008A284F /* LoginViewController.swift in Sources */,
+				4C145C9D1EF67262008A284F /* ViewController.swift in Sources */,
+				4C145C9B1EF67262008A284F /* AppDelegate.swift in Sources */,
+				4C145CF81EF67F47008A284F /* beautyServer.swift in Sources */,
+				4C145D0C1EF6E1CE008A284F /* StoreViewController.swift in Sources */,
+				4C145CFE1EF680D8008A284F /* User.swift in Sources */,
+				4C145CF21EF67CDA008A284F /* ForgotPasswordViewController.swift in Sources */,
+				4C145D001EF68330008A284F /* AuthControllers.swift in Sources */,
+				4C145CF41EF67CDA008A284F /* SignUpViewController.swift in Sources */,
+				4C145D021EF683AC008A284F /* beautyObject.swift in Sources */,
+				4C145CF61EF67E57008A284F /* beautyTheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C145CA71EF67262008A284F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C145CB21EF67262008A284F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C145CAD1EF67262008A284F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C145C961EF67262008A284F /* beautyios */;
+			targetProxy = 4C145CAC1EF67262008A284F /* PBXContainerItemProxy */;
+		};
+		4C145CB81EF67262008A284F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C145C961EF67262008A284F /* beautyios */;
+			targetProxy = 4C145CB71EF67262008A284F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C145C9E1EF67262008A284F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C145C9F1EF67262008A284F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C145CA31EF67262008A284F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C145CA41EF67262008A284F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C145CBD1EF67262008A284F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C145CBE1EF67262008A284F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C145CC01EF67262008A284F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3A63A82DC7B9A0DACC825E1 /* Pods-beautyios.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = beautyios/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = beatyios.beautyios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4C145CC11EF67262008A284F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 507DE4A3D124823617EE90AB /* Pods-beautyios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = beautyios/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = beatyios.beautyios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		4C145CC31EF67262008A284F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FB66F1090848D8FF4980543 /* Pods-beautyiosTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = beautyiosTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = beatyios.beautyiosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/beautyios.app/beautyios";
+			};
+			name = Debug;
+		};
+		4C145CC41EF67262008A284F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 806627D4228EC8A546ADACA2 /* Pods-beautyiosTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = beautyiosTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = beatyios.beautyiosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/beautyios.app/beautyios";
+			};
+			name = Release;
+		};
+		4C145CC61EF67262008A284F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49403E11A1AF6F0BBA605EF8 /* Pods-beautyiosUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = beautyiosUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = beatyios.beautyiosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = beautyios;
+			};
+			name = Debug;
+		};
+		4C145CC71EF67262008A284F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE97D20E43B0DA244964E083 /* Pods-beautyiosUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = beautyiosUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = beatyios.beautyiosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = beautyios;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C145C921EF67262008A284F /* Build configuration list for PBXProject "beautyios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C145CBD1EF67262008A284F /* Debug */,
+				4C145CBE1EF67262008A284F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C145CBF1EF67262008A284F /* Build configuration list for PBXNativeTarget "beautyios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C145CC01EF67262008A284F /* Debug */,
+				4C145CC11EF67262008A284F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C145CC21EF67262008A284F /* Build configuration list for PBXNativeTarget "beautyiosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C145CC31EF67262008A284F /* Debug */,
+				4C145CC41EF67262008A284F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C145CC51EF67262008A284F /* Build configuration list for PBXNativeTarget "beautyiosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C145CC61EF67262008A284F /* Debug */,
+				4C145CC71EF67262008A284F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C145C8F1EF67262008A284F /* Project object */;
+}

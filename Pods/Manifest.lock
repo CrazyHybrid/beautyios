@@ -1,0 +1,57 @@
+PODS:
+  - ActiveLabel (0.7.1)
+  - Alamofire (4.5.0)
+  - CVCalendar (1.5.0)
+  - IHKeyboardAvoiding (4.0)
+  - Material (2.6.3):
+    - Material/Core (= 2.6.3)
+  - Material/Core (2.6.3)
+  - OneSignal (2.5.4)
+  - RappleProgressHUD (2.3.0)
+  - Realm (2.8.2):
+    - Realm/Headers (= 2.8.2)
+  - Realm/Headers (2.8.2)
+  - RealmSwift (2.8.2):
+    - Realm (= 2.8.2)
+  - SQLite.swift (0.11.3):
+    - SQLite.swift/standard (= 0.11.3)
+  - SQLite.swift/standard (0.11.3)
+  - SwiftMessages (3.3.4)
+  - SwiftyJSON (3.1.4)
+  - XLPagerTabStrip (7.0.0)
+  - ZiggeoSwiftSDK (1.0.0)
+
+DEPENDENCIES:
+  - ActiveLabel
+  - Alamofire (~> 4.4)
+  - CVCalendar (~> 1.5.0)
+  - IHKeyboardAvoiding
+  - Material
+  - OneSignal
+  - RappleProgressHUD
+  - RealmSwift
+  - SQLite.swift
+  - SwiftMessages
+  - SwiftyJSON
+  - XLPagerTabStrip (~> 7.0)
+  - ZiggeoSwiftSDK
+
+SPEC CHECKSUMS:
+  ActiveLabel: 68625f22775f51c31bb691ca8de20f1e5a3bc825
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  CVCalendar: 5d51a7bda1b9439b612de69d86a91a73befa1936
+  IHKeyboardAvoiding: d1063551a2bed47cdbeab255e3aa5d7847d7efa8
+  Material: af607a7ec0e9978ef85cf189a3d8ceeeb650400f
+  OneSignal: da994bcf6a2efbdceaf71e389e1d05245c562899
+  RappleProgressHUD: d29a931f7e867e9d9c3b88831f62e8366976eb41
+  Realm: 0e262abf087c7054013e00579274f7e070486d4a
+  RealmSwift: 73565e91bc403c1149e4acf31ff9de506b2f9459
+  SQLite.swift: 99b36c22084427f0abbeb957556ce1528cf10bb3
+  SwiftMessages: 1172842c4d4af818704f90c50ec8dc597e55c9af
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
+  ZiggeoSwiftSDK: 93a7231938742ec8f9d23c9464d40beeb4495edb
+
+PODFILE CHECKSUM: e29355ea05d135d6cc5bc2c0166cc8682b8d6a3e
+
+COCOAPODS: 1.2.1
