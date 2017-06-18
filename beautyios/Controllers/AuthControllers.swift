@@ -13,11 +13,27 @@ import Alamofire
 import SwiftyJSON
 
 class AuthControllers: beautyServer {
-    static func login(_ user: String, _ password: String, _ success: @escaping ([String:Any]) -> Void, _ failure: @escaping(String) -> Void) {
-        let url = getRequestUrl(requestGenerateAuthCookie)
-        let params = [USER_PARAM_KEY:szzwhoKey,
-                      USER_PARAM_USERNAME: user,
-                      USER_PARAM_PASSWORD: password]
+    
+    static func oauthToken(_ username: String, _ password: String, _success: @escaping ([String:Any]) -> Void, _ failure: @escaping(String) -> Void) {
+        
+        let url = getRequestUrl(oauthToken)
+        let params = [USER_PARAM_USERNAME: username,
+                      USER_PARAM_PASSWORD: password,
+                      USER_GRANT_TYPE: "password"]
+        
+        Alamofire.request(URL(string:url)!,
+                          method: .post,
+                          parameters: params)
+            .responseJSON { (response) in
+                completion(response, _success, failure)
+        }
+    }
+    
+    static func login(_ onesignalid: String, _ pushtoken: String, _ success: @escaping ([String:Any]) -> Void, _ failure: @escaping(String) -> Void) {
+        let url = getRequestUrl(logIn)
+        let params = [AUTHORIZATION:pado_token,
+                      ONESIGNAL_ID: onesignalid,
+                      ONESIGNAL_TOKEN: pushtoken]
         
         Alamofire.request(URL(string:url)!,
                           method: .post,
@@ -27,11 +43,26 @@ class AuthControllers: beautyServer {
         }
     }
     
-    static func loginWithFacebook(_ accessToekn: String, _ success: @escaping ([String:Any]) -> Void, _ failure: @escaping(String) -> Void) {
-        let url = getRequestUrl(requestFBConnect)
-        let params = [USER_PARAM_KEY:szzwhoKey,
-                      USER_PARAM_FB_ACCESS_TOAKEN: accessToekn,
-                      USER_PARAM_INSECURE: "cool"]
+    static func logout(_ token: String, _ success: @escaping ([String:Any]) -> Void, _ failure: @escaping(String) -> Void) {
+        let url = getRequestUrl(enroll)
+        let params = [AUTHORIZATION: pado_token]
+        
+        Alamofire.request(URL(string:url)!,
+                          method: .post,
+                          parameters: params)
+            .responseJSON { (response) in
+                completion(response, success, failure)
+        }
+    }
+
+    static func accountRegister(_ realname: String, _ email: String, _ password: String, _ password_confirm: String, _ birthday: String, _ gender: Int, _ success: @escaping ([String:Any]) -> Void, _ failure: @escaping(String) -> Void) {
+        let url = getRequestUrl(accountRegister)
+        let params = [USER_PARAM_REALNAME: realname,
+                      USER_PARAM_EMAIL: email,
+                      USER_PARAM_PASSWORD: password,
+                      USER_PARAM_PASSWORD_CONFIRM: password_confirm,
+                      USER_PARAM_BIRTHDAY: birthday,
+                      USER_PARAM_GENDER:gender] as [String : Any]
         
         Alamofire.request(URL(string:url)!,
                           method: .post,
@@ -41,10 +72,10 @@ class AuthControllers: beautyServer {
         }
     }
     
-    static func getUserInfo(_ userId: Int, _ success: @escaping ([String:Any]) -> Void, _ failure: @escaping(String) -> Void) {
-        let url = getRequestUrl(requestGetUserInfo)
-        let params = [USER_PARAM_KEY:szzwhoKey,
-                      USER_PARAM_USERID: userId] as [String : Any]
+    static func enroll(_ storeId: Int, _ customerId: Int, _ success: @escaping ([String:Any]) -> Void, _ failure: @escaping(String) -> Void) {
+        let url = getRequestUrl(enroll)
+        let params = [STORE_ID:storeId,
+                      CUSTOMER_ID: customerId] as [String : Any]
         
         Alamofire.request(URL(string:url)!,
                           method: .post,
@@ -54,10 +85,9 @@ class AuthControllers: beautyServer {
         }
     }
     
-    static func forgotPassword(_ user: String, _ success: @escaping ([String:Any]) -> Void, _ failure: @escaping(String) -> Void) {
-        let url = getRequestUrl(requestRetrievePassword)
-        let params = [USER_PARAM_KEY:szzwhoKey,
-                      USER_PARAM_USER_LOGIN: user]
+    static func forgotPassword(_ email: String, _ success: @escaping ([String:Any]) -> Void, _ failure: @escaping(String) -> Void) {
+        let url = getRequestUrl(forgotPassword)
+        let params = [USER_PARAM_EMAIL: email]
         
         Alamofire.request(URL(string:url)!,
                           method: .post,
