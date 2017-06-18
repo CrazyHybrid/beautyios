@@ -44,24 +44,18 @@ extension LoginViewController {
         }
         else {
             showLoading("")
-            self.hideLoading()
-            self.performSegue(withIdentifier: "gotoMain", sender: sender)
-            /*
+            
             AuthControllers.login(loginEmailTextField.text!,
                                   loginPasswordTextField.text!,
-                                  { (result) in
-                                        User.setUser(result, success: { (user) in
-                                            self.hideLoading()
-                                            self.performSegue(withIdentifier: "gotoSezzwho", sender: sender)
-                                        }, failure: { (errorString) in
-                                            self.hideLoading()
-                                            self.showErrorMsg(errorString)
-                                        })
+                                { (result) in
+
+                                    self.hideLoading()
+                                    self.performSegue(withIdentifier: "gotoMain", sender: sender)
                                 }) { (errorString) in
                                     self.hideLoading()
                                     self.showErrorMsg(errorString)
                                 }
-            */
+            
         }
     }
 
