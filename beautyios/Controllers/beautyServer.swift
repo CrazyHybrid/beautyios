@@ -17,9 +17,8 @@ class beautyServer {
     static let RESPONSE_INVALID = "Invalid Response"
     
     static let serverUrl = "http://pastelapitest.mypado.com"
-    static let szzwhoKey = "jsonpSezzWhoApp8513467259"
     
-    static let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1laWQiOiI3MjgiLCJ1bmlxdWVfbmFtZSI6InBhcmtldWdAeWFob28uY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9hY2Nlc3Njb250cm9sc2VydmljZS8yMDEwLzA3L2NsYWltcy9pZGVudGl0eXByb3ZpZGVyIjoiQVNQLk5FVCBJZGVudGl0eSIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiNDc3MzcwYTEtNGUzOC00MTg0LTliYTYtMjhhZDljMGY3YWU1Iiwicm9sZSI6IlVzZXIiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjU5ODIyIiwiYXVkIjoiNDE0ZTE5MjdhMzg4NGY2OGFiYzc5ZjcyODM4MzdmZDEiLCJleHAiOjE0OTg5OTk2NDEsIm5iZiI6MTQ5NjQwNzY0MX0.AyLqDkPN_rKxy97vDSj06X4gBI4uwXrbFvPC19jWMdo"
+    static let pado_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1laWQiOiI3MjgiLCJ1bmlxdWVfbmFtZSI6InBhcmtldWdAeWFob28uY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9hY2Nlc3Njb250cm9sc2VydmljZS8yMDEwLzA3L2NsYWltcy9pZGVudGl0eXByb3ZpZGVyIjoiQVNQLk5FVCBJZGVudGl0eSIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiNDc3MzcwYTEtNGUzOC00MTg0LTliYTYtMjhhZDljMGY3YWU1Iiwicm9sZSI6IlVzZXIiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjU5ODIyIiwiYXVkIjoiNDE0ZTE5MjdhMzg4NGY2OGFiYzc5ZjcyODM4MzdmZDEiLCJleHAiOjE0OTg5OTk2NDEsIm5iZiI6MTQ5NjQwNzY0MX0.AyLqDkPN_rKxy97vDSj06X4gBI4uwXrbFvPC19jWMdo"
     
     
     //Auth
@@ -67,7 +66,6 @@ class beautyServer {
     static let answerCustomerSurvey = "/api/customersurvey/answercustomersurvey/"
     
     
-    static let requestGenerateAuthCookie = "userplus/generate_auth_cookie/"
     static let requestFBConnect = "user/fb_connect/"
     static let requestGetUserInfo = "userplus/get_userinfo/"
     static let requestRetrievePassword = "userplus/retrieve_password/"
@@ -85,14 +83,26 @@ class beautyServer {
     static let RES_KEY_ERROR = "error"
     
     static let USER_PARAM_KEY = "key"
+    
     static let USER_PARAM_USERNAME = "username"
     static let USER_PARAM_PASSWORD = "password"
-    static let USER_PARAM_FB_ACCESS_TOAKEN = "access_token"
-    static let USER_PARAM_INSECURE = "insecure"
-    static let USER_PARAM_USERID = "user_id"
-    static let USER_PARAM_USER_LOGIN = "user_login"
-    static let USER_PARAM_COOKIE = "cookie"
+    static let USER_GRANT_TYPE = "grant_type"
     
+    static let AUTHORIZATION = "Authorization"
+    static let ONESIGNAL_ID = "OneSignalId"
+    static let ONESIGNAL_TOKEN = "PushToken"
+    
+    static let STORE_ID = "store_id"
+    static let CUSTOMER_ID = "customer_id"
+    
+    static let PADO_USERNAME = "pado-username"
+    static let PADO_PASSWORD = "pado-password"
+    
+    static let USER_PARAM_REALNAME = "RealName"
+    static let USER_PARAM_EMAIL = "email"
+    static let USER_PARAM_PASSWORD_CONFIRM = "confirmpassword"
+    static let USER_PARAM_BIRTHDAY = "Birthday"
+    static let USER_PARAM_GENDER = "Gender"
     
     static let PARAM_TYPE = "type"
     static let PARAM_COMMENTS = "comments"
