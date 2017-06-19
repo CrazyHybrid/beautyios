@@ -25,7 +25,7 @@ class beautyServer {
     static let enroll = "/api/accounts/enroll/"
     static let accountRegister = "/api/accounts/register_user/"
     static let forgotPassword = "/api/accounts/forgotpassword/"
-    static let oauthToken = "/oauth/token/"
+    static let oauthTokenUrl = "/oauth/token/"
     static let logIn = "/api/accounts/log_in/"
     static let logOut = "/api/accounts/log_out/"
     
