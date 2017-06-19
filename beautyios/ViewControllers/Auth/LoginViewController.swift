@@ -45,7 +45,11 @@ extension LoginViewController {
         else {
             showLoading("")
             
-            AuthControllers.login(loginEmailTextField.text!,
+//            self.hideLoading()
+//            self.performSegue(withIdentifier: "gotoMain", sender: sender)
+
+            
+            AuthControllers.oauthToken(loginEmailTextField.text!,
                                   loginPasswordTextField.text!,
                                 { (result) in
 
