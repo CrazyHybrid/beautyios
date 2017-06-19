@@ -14,18 +14,26 @@ import SwiftyJSON
 
 class AuthControllers: beautyServer {
     
-    static func oauthToken(_ username: String, _ password: String, _success: @escaping ([String:Any]) -> Void, _ failure: @escaping(String) -> Void) {
+    static func oauthToken(_ username: String, _ password: String, _ success: @escaping ([String:Any]) -> Void, _ failure: @escaping(String) -> Void) {
         
-        let url = getRequestUrl(oauthToken)
+        let url = getRequestUrl(oauthTokenUrl)
+        
+        let headers = [
+                "Authorization": pado_token,
+                "Content-Type": "application/x-www-form-urlencoded"
+        ]
+        
         let params = [USER_PARAM_USERNAME: username,
                       USER_PARAM_PASSWORD: password,
                       USER_GRANT_TYPE: "password"]
         
         Alamofire.request(URL(string:url)!,
                           method: .post,
-                          parameters: params)
+                          parameters: params,
+                          encoding: URLEncoding.default,
+                          headers: headers)
             .responseJSON { (response) in
-                completion(response, _success, failure)
+                completion(response, success, failure)
         }
     }
     
