@@ -13,9 +13,11 @@ import RappleProgressHUD
 
 class ViewController: UIViewController {
 
-    let errorMsgTitle = "오유"
+    let errorMsgTitle = "오류"
     let warningMsgTitle = "경고"
     let infoMsgTitle = "주의"
+    
+    let servererror = "서버에 오류가 생긴것 같습니다."
     
     override func viewDidLoad() {
         super.viewDidLoad()
