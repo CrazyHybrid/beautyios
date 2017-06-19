@@ -9,15 +9,11 @@
 import Foundation
 import UIKit
 
-class StoreViewCell: UITableViewCell {
-    
-}
+
 
 
 class StoreViewController: UIViewController {
     
-    
-    @IBOutlet weak var storeTableView: UITableView!
     
     override func viewDidLoad() {
         
@@ -27,29 +23,6 @@ class StoreViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
-    
 }
 
 
-extension StoreViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.storeTableView.dequeueReusableCell(withIdentifier: "StoreViewCell", for: indexPath) as! StoreViewCell
-        
-        return cell
-    }
-}
-
-extension StoreViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.storeTableView.deselectRow(at: indexPath, animated: true)
-        
-    }
-}

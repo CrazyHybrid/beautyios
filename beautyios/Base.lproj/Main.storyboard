@@ -966,7 +966,7 @@
             <objects>
                 <navigationController storyboardIdentifier="authNavVC" automaticallyAdjustsScrollViewInsets="NO" id="rQr-ip-urT" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tFY-so-oKQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tFY-so-oKQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.2274509804" green="0.77647058820000003" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -983,10 +983,10 @@
             </objects>
             <point key="canvasLocation" x="230" y="122"/>
         </scene>
-        <!--Store View Controller-->
+        <!--Store List View Controller-->
         <scene sceneID="ICd-ST-bz2">
             <objects>
-                <viewController storyboardIdentifier="mainVC" automaticallyAdjustsScrollViewInsets="NO" id="4ac-su-ZaI" customClass="StoreViewController" customModule="beautyios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainVC" automaticallyAdjustsScrollViewInsets="NO" id="4ac-su-ZaI" customClass="StoreListViewController" customModule="beautyios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LIQ-bg-BV4"/>
                         <viewControllerLayoutGuide type="bottom" id="hne-TD-9LI"/>
@@ -1072,7 +1072,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="414" height="210"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FWr-0k-ZkY" id="tFa-tv-2fo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="209"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="209.66666666666666"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vla-FK-X6y">
@@ -1172,10 +1172,10 @@
             </objects>
             <point key="canvasLocation" x="1055" y="982"/>
         </scene>
-        <!--View Controller-->
+        <!--Store View Controller-->
         <scene sceneID="9GN-9f-R61">
             <objects>
-                <viewController id="MTH-4w-vg3" sceneMemberID="viewController">
+                <viewController id="MTH-4w-vg3" customClass="StoreViewController" customModule="beautyios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nX3-72-H5g"/>
                         <viewControllerLayoutGuide type="bottom" id="F24-ag-2xH"/>
@@ -1483,7 +1483,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="372" height="100"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nFA-jL-9cO" id="qva-mE-p78">
-                                                            <rect key="frame" x="0.0" y="0.0" width="372" height="99"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="372" height="99.666666666666671"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6월17일 수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8y-8D-RR1">
@@ -1582,7 +1582,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="372" height="80"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wZ4-3x-4qQ" id="RdJ-m2-Gn8">
-                                                            <rect key="frame" x="0.0" y="0.0" width="372" height="79"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="372" height="79.666666666666671"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZI-ZY-B6K">
@@ -1607,7 +1607,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선불액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfU-Jj-fuA">
-                                                                    <rect key="frame" x="69" y="25" width="156" height="19"/>
+                                                                    <rect key="frame" x="69" y="24" width="156" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="156" id="su7-V7-Y9S"/>
                                                                     </constraints>
@@ -1625,7 +1625,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017.6.17~2018.6.17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqW-GJ-eWo">
-                                                                    <rect key="frame" x="77" y="49" width="258" height="22"/>
+                                                                    <rect key="frame" x="77" y="50" width="258" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -1778,7 +1778,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="372" height="140"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oCh-tN-uCA" id="dCP-iG-RHS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="372" height="139"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="372" height="139.66666666666666"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수분크림과 보습크림의 차이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vT2-yq-QwN">
