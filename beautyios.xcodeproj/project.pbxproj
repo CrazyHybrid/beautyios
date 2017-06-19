@@ -24,6 +24,7 @@
 		4C145D0A1EF6E0FD008A284F /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145D091EF6E0FD008A284F /* Toast.swift */; };
 		4C145D0C1EF6E1CE008A284F /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145D0B1EF6E1CE008A284F /* StoreViewController.swift */; };
 		4C145D0E1EF6F0EF008A284F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C145D0D1EF6F0EF008A284F /* Assets.xcassets */; };
+		4C15196E1EF7204500BC57D9 /* StoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15196D1EF7204400BC57D9 /* StoreListViewController.swift */; };
 		8364772344835106881DBAE0 /* Pods_beautyios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 513B49596FF41373F7EB02B8 /* Pods_beautyios.framework */; };
 		FF82CD0CE9C2A9FCD9320AA4 /* Pods_beautyiosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0A9AFCD6C2A62BCEA25DAB /* Pods_beautyiosUITests.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		4C145D091EF6E0FD008A284F /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Views/Toast.swift; sourceTree = "<group>"; };
 		4C145D0B1EF6E1CE008A284F /* StoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreViewController.swift; path = Main/StoreViewController.swift; sourceTree = "<group>"; };
 		4C145D0D1EF6F0EF008A284F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C15196D1EF7204400BC57D9 /* StoreListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreListViewController.swift; path = Main/StoreListViewController.swift; sourceTree = "<group>"; };
 		507DE4A3D124823617EE90AB /* Pods-beautyios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beautyios.release.xcconfig"; path = "Pods/Target Support Files/Pods-beautyios/Pods-beautyios.release.xcconfig"; sourceTree = "<group>"; };
 		513B49596FF41373F7EB02B8 /* Pods_beautyios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beautyios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		806627D4228EC8A546ADACA2 /* Pods-beautyiosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beautyiosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beautyiosTests/Pods-beautyiosTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				4C145D0B1EF6E1CE008A284F /* StoreViewController.swift */,
+				4C15196D1EF7204400BC57D9 /* StoreListViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C15196E1EF7204500BC57D9 /* StoreListViewController.swift in Sources */,
 				4C145D061EF6B976008A284F /* DBHelper.swift in Sources */,
 				4C145D0A1EF6E0FD008A284F /* Toast.swift in Sources */,
 				4C145CF31EF67CDA008A284F /* LoginViewController.swift in Sources */,
