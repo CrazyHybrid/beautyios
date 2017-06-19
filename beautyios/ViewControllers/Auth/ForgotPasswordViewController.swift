@@ -26,10 +26,10 @@ class ForgotPasswordViewController: ViewController {
 
     @IBAction func getNewPassword(_ sender: Any) {
         if (userTextField.text?.isEmpty)! {
-            self.showWarningMessage("You should enter your username/email!")
+            self.showWarningMessage("이메일을 입력하세요!")
         }
         else {
-            showLoading("Retrieving your password...")
+            showLoading("비밀코드를 가져 오는중...")
             AuthControllers.forgotPassword(userTextField.text!, { (result) in
                 self.hideLoading()
                 self.navigationController?.popViewController(animated: true)
