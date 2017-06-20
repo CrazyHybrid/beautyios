@@ -11,7 +11,8 @@ import Material
 import ActiveLabel
 import SwiftMessages
 
-class SignUpViewController: UIViewController {
+
+class SignUpViewController: ViewController {
 
     
     
@@ -30,7 +31,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var birthDayPicker: UIDatePicker!
     @IBOutlet weak var birthDayLabel: UILabel!
     
-    var nSex = 0
+    @IBOutlet weak var errorMessageLabel: UILabel!
+    var nGender = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +50,8 @@ class SignUpViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
         self.dateView.isHidden = true
+        self.errorMessageLabel.isHidden = true
+        
     }
     
     @IBAction func signup(_ sender: Any) {
@@ -57,7 +61,40 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        self.performSegue(withIdentifier: "gotoSezzwho", sender: sender)
+        AuthControllers.accountRegister(displayNameTextField.text!, emailTextField.text!,
+                                   passwordTextField.text!, passconfirmField.text!, birthDayLabel.text!, nGender,
+                                   completion: {(response, error) -> Void in
+                                    
+                                    if response != nil && response?.object(forKey: "userName") != nil{
+                                        let userName = response?.object(forKey: "userName")
+                                        let password = response?.object(forKey: "guid")
+                                        
+                                        let preferences = UserDefaults.standard
+                                        preferences.set(userName, forKey: User.PADO_USERNAME)
+                                        preferences.set(userName, forKey: User.PADO_PASSWORD)
+                                        
+                                        let didSave = preferences.synchronize();
+                                        self.hideLoading()
+                                        print(userName ?? "")
+                                        print(password ?? "")
+                                        print(didSave)
+                                        
+                                    }else{
+                                        let modelState = response?.object(forKey: "modelState") as? NSDictionary
+                                        
+                                        if modelState?.object(forKey: "") as? String != nil {
+                                            self.errorMessageLabel.text = modelState?.object(forKey: "") as? String
+                                            self.errorMessageLabel.isHidden = false
+                                        } else if modelState?.object(forKey: "model.confirmpassword") != nil {
+                                            
+                                            self.errorMessageLabel.text = "두개의 비밀번호가 일치하지 않습니다."
+                                            self.errorMessageLabel.isHidden = false
+                                            
+                                        }
+                                    }
+                                    
+        })
+        
     }
     
     @IBAction func onClickBackButton(_ sender: Any) {
@@ -68,7 +105,7 @@ class SignUpViewController: UIViewController {
         
         self.dateView.isHidden = true
         let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "dd-MM-yyyy"
+        dateFormat.dateFormat = "M-d-yyyy"
         birthDayLabel.text = dateFormat.string(from: birthDayPicker.date)
         
         
@@ -100,7 +137,7 @@ class SignUpViewController: UIViewController {
         selMenButton.setTitleColor(UIColor.white, for: .normal)
         selWomenButton.backgroundColor = UIColor.white
         selWomenButton.setTitleColor(beautyTheme.Colors.beautyColor, for: .normal)
-        nSex = 1
+        nGender = 1
         
     }
     
@@ -109,33 +146,8 @@ class SignUpViewController: UIViewController {
         selWomenButton.setTitleColor(UIColor.white, for: .normal)
         selMenButton.backgroundColor = UIColor.white
         selMenButton.setTitleColor(beautyTheme.Colors.beautyColor, for: .normal)
-        nSex = 2
+        nGender = 0
     }
-    
-    func showWarningMessage(_ warningString: String) {
-        showMessage("경고", warningString, Theme.warning)
-    }
-    
-    func showMessage(_ titleString: String, _ msgString: String, _ theme: Theme) {
-        let view = MessageView.viewFromNib(layout: .CardView)
-        view.configureTheme(theme)
-        view.configureContent(title: titleString, body: msgString)
-        view.button?.isHidden = true
-        
-        var config = SwiftMessages.Config()
-        config.presentationContext = .viewController(self.navigationController == nil ? self:self.navigationController!)
-        config.duration = .forever
-        config.dimMode = .gray(interactive: true)
-        config.interactiveHide = false
-        config.preferredStatusBarStyle = .lightContent
-        config.eventListeners.append() { event in
-            if case .didHide = event { print("yep") }
-        }
-        
-        SwiftMessages.show(config: config, view: view)
-    }
-
-    
 }
 
 extension SignUpViewController {

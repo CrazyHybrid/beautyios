@@ -24,8 +24,7 @@ class LoginViewController: ViewController {
         if let _ = User.getUser() {
             self.performSegue(withIdentifier: "gotoMain", sender: self)
         }
-    }
-    
+    }    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -45,22 +44,51 @@ extension LoginViewController {
         else {
             showLoading("")
             
-//            self.hideLoading()
-//            self.performSegue(withIdentifier: "gotoMain", sender: sender)
-
-            
             AuthControllers.oauthToken(loginEmailTextField.text!,
                                   loginPasswordTextField.text!,
-                                { (result) in
-
-                                    self.hideLoading()
-                                    self.performSegue(withIdentifier: "gotoMain", sender: sender)
-                                }) { (errorString) in
-                                    self.hideLoading()
-                                    self.showErrorMsg(errorString)
-                                }
-            
+                                completion: {(response, error) -> Void in
+                                    
+                                    if response != nil{
+                                        let accessToken = response?.object(forKey: "access_token")
+                                        
+                                        let preferences = UserDefaults.standard
+                                        preferences.set(accessToken, forKey: User.PADO_TOKEN)
+                                        
+                                        let didSave = preferences.synchronize();
+                                        
+                                        print(accessToken ?? "")
+                                        self.updatePush()
+                                        print(didSave)
+                                        self.hideLoading()
+                                        self.performSegue(withIdentifier: "gotoMain", sender: sender)
+                                        
+                                    }else{
+                                        self.errorLabel.text = "아이디나 비밀번호가 올바르지 않습니다.";
+                                        self.errorLabel.isHidden = false;
+                                    }
+                                    
+            })
         }
+    }
+
+    func updatePush() {
+        
+        let preferences = UserDefaults.standard
+        
+        let padoToken = preferences.string(forKey: User.PADO_TOKEN)!
+        let onesignalId = preferences.string(forKey: User.ONESIGNAL_ID)
+        let onesignalToken = preferences.string(forKey: User.ONESIGNAL_TOKEN)
+        
+        AuthControllers.login(onesignalId!,
+                                   onesignalToken!, padoToken,
+                                   completion: {(response, error) -> Void in
+                                    
+                                    if response != nil{
+                                    }else{
+                                    }
+                                    
+        })
+        
     }
 
     

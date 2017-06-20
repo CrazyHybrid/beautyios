@@ -17,7 +17,12 @@ class StoreViewCell: UITableViewCell {
 class StoreListViewController: UIViewController {
     
     
+    @IBOutlet weak var viewMembership: UIView!
     @IBOutlet weak var storeTableView: UITableView!
+    
+    @IBOutlet weak var viewNoMembership: UIView!
+    
+    
     
     override func viewDidLoad() {
         
@@ -25,6 +30,14 @@ class StoreListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        viewNoMembership.isHidden = true
+    }
+    
+    @IBAction func OnClickNotification(_ sender: Any) {
+    }
+    
+    @IBAction func OnClickLogoutMenu(_ sender: Any) {
     }
 }
 

@@ -13,6 +13,9 @@ class ForgotPasswordViewController: ViewController {
 
     @IBOutlet weak var userTextField: ErrorTextField!
     
+    @IBOutlet weak var errorMessageLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +25,7 @@ class ForgotPasswordViewController: ViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        self.errorMessageLabel.isHidden = true
     }
 
     @IBAction func getNewPassword(_ sender: Any) {
@@ -30,12 +34,15 @@ class ForgotPasswordViewController: ViewController {
         }
         else {
             showLoading("비밀코드를 가져 오는중...")
-            AuthControllers.forgotPassword(userTextField.text!, { (result) in
-                self.hideLoading()
-                self.navigationController?.popViewController(animated: true)
-            }, { (errorString) in
-                self.hideLoading()
-                self.showErrorMsg(errorString)
+            AuthControllers.forgotPassword(userTextField.text!, completion: {(response, error) -> Void in
+                
+                if response != nil{
+                    self.hideLoading()
+                    self.showInfoMessage("이메일을 확인해주세요.")
+                }else{
+                    self.hideLoading()
+                    self.errorMessageLabel.isHidden = false
+                }
             })
         }
 
@@ -57,6 +64,7 @@ extension ForgotPasswordViewController {
 extension ForgotPasswordViewController: TextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         userTextField.resignFirstResponder()
+        self.errorMessageLabel.isHidden = true
         return true
     }
     
