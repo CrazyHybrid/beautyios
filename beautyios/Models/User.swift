@@ -18,6 +18,8 @@ class User: Object {
     static let ONESIGNAL_ID = "onesignal-id"
     static let ONESIGNAL_TOKEN = "onesignal-token"
     
+    static let PADO_TOKEN = "access_token"
+    
     static let STORE_ID = "store_id"
     static let CUSTOMER_ID = "customer_id"
     
