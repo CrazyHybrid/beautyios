@@ -22,56 +22,56 @@ class beautyServer {
     
     
     //Auth
-    static let enroll = "/api/accounts/enroll/"
-    static let accountRegister = "/api/accounts/register_user/"
-    static let forgotPassword = "/api/accounts/forgotpassword/"
-    static let oauthTokenUrl = "/oauth/token/"
-    static let logIn = "/api/accounts/log_in/"
-    static let logOut = "/api/accounts/log_out/"
+    static let enroll = "/api/accounts/enroll"
+    static let accountRegister = "/api/accounts/register_user"
+    static let forgotPassword = "/api/accounts/forgotpassword"
+    static let oauthTokenUrl = "/oauth/token"
+    static let logIn = "/api/accounts/log_in"
+    static let logOut = "/api/accounts/log_out"
     
     //Store
-    static let getStoreMemberships = "/api/store/getstorememberships/"
-    static let getStoreMembership = "/api/appointment/getstoreservices/"
-    static let getStoreServices = "/api/appointment/getstoreservices/"
-    static let getStoreSchedules = "/api/appointment/getstoreschedules/"
+    static let getStoreMemberships = "/api/store/getstorememberships"
+    static let getStoreMembership = "/api/appointment/getstoreservices"
+    static let getStoreServices = "/api/appointment/getstoreservices"
+    static let getStoreSchedules = "/api/appointment/getstoreschedules"
     
     //AppointMent
-    static let getPastAppointments = "/api/appointment/getpastappointments/"
-    static let getCanceledAppointments = "/api/appointment/getcanceledappointments/"
-    static let createStoreAppointment = "/api/appointment/createappointment/"
-    static let cancelAppointment = "/api/appointment/cancelappointment/"
-    static let editAppointment = "/api/appointment/editappointment/"
+    static let getPastAppointments = "/api/appointment/getpastappointments"
+    static let getCanceledAppointments = "/api/appointment/getcanceledappointments"
+    static let createStoreAppointment = "/api/appointment/createappointment"
+    static let cancelAppointment = "/api/appointment/cancelappointment"
+    static let editAppointment = "/api/appointment/editappointment"
     
     //Diary
-    static let getDiaryAlertSetting = "/api/store/getdiaryalertsetting/"
-    static let setDiaryAlertSetting = "/api/store/setdiaryalertsetting/"
-    static let getDiaryEntries = "/api/diary/getdiaryentries/"
-    static let createDiaryEntry = "/api/diary/creatediaryentry/"
-    static let editDiaryEntry = "/api/diary/editdiaryentry/"
-    static let deleteDiaryEntry = "/api/diary/deletediaryentry/"
+    static let getDiaryAlertSetting = "/api/store/getdiaryalertsetting"
+    static let setDiaryAlertSetting = "/api/store/setdiaryalertsetting"
+    static let getDiaryEntries = "/api/diary/getdiaryentries"
+    static let createDiaryEntry = "/api/diary/creatediaryentry"
+    static let editDiaryEntry = "/api/diary/editdiaryentry"
+    static let deleteDiaryEntry = "/api/diary/deletediaryentry"
     
     //Message
-    static let getChatMessages = "/api/chat/getchatmessages/"
-    static let sendChatMessage = "/api/chat/sendchatmessage/"
+    static let getChatMessages = "/api/chat/getchatmessages"
+    static let sendChatMessage = "/api/chat/sendchatmessage"
     
     //Other
-    static let submitReview = "/api/appointment/reviewappointment/"
-    static let getCreditLog = "/api/store/getcreditlogrequest/"
-    static let getFreeCreditLog = "/api/store/getcreditlogrequest/"
-    static let getTicketLog = "/api/store/getticketlogrequest/"
-    static let createReferee = "/api/customers/createreferee/"
+    static let submitReview = "/api/appointment/reviewappointment"
+    static let getCreditLog = "/api/store/getcreditlogrequest"
+    static let getFreeCreditLog = "/api/store/getcreditlogrequest"
+    static let getTicketLog = "/api/store/getticketlogrequest"
+    static let createReferee = "/api/customers/createreferee"
     
     //Survey
-    static let getCustomerSurveys = "/api/customersurvey/getcustomersurveys/"
-    static let answerCustomerSurvey = "/api/customersurvey/answercustomersurvey/"
+    static let getCustomerSurveys = "/api/customersurvey/getcustomersurveys"
+    static let answerCustomerSurvey = "/api/customersurvey/answercustomersurvey"
     
     
-    static let requestFBConnect = "user/fb_connect/"
-    static let requestGetUserInfo = "userplus/get_userinfo/"
-    static let requestRetrievePassword = "userplus/retrieve_password/"
+    static let requestFBConnect = "user/fb_connect"
+    static let requestGetUserInfo = "userplus/get_userinfo"
+    static let requestRetrievePassword = "userplus/retrieve_password"
     
-    static let requestActivities = "userplus/following_activities/"
-    static let requestPostVideo = "userplus/activities_post_update/"
+    static let requestActivities = "userplus/following_activities"
+    static let requestPostVideo = "userplus/activities_post_update"
     static let requestAddPost = "add_post"
     
     // Activity
