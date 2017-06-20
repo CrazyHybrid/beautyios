@@ -66,6 +66,8 @@ class beautyServer {
     static let answerCustomerSurvey = "/api/customersurvey/answercustomersurvey"
     
     
+    
+    
     static let requestFBConnect = "user/fb_connect"
     static let requestGetUserInfo = "userplus/get_userinfo"
     static let requestRetrievePassword = "userplus/retrieve_password"
@@ -73,11 +75,6 @@ class beautyServer {
     static let requestActivities = "userplus/following_activities"
     static let requestPostVideo = "userplus/activities_post_update"
     static let requestAddPost = "add_post"
-    
-    // Activity
-    static let requestUserDetails = "userplus/sz_user_detail_page"
-    static let requestActivityLike = "userplus/sz_add_user_ditte"
-    static let requestComments = "userplus/following_activities"
     
     static let RES_KEY_STATUS = "status"
     static let RES_KEY_ERROR = "error"
@@ -103,6 +100,8 @@ class beautyServer {
     static let USER_PARAM_PASSWORD_CONFIRM = "confirmpassword"
     static let USER_PARAM_BIRTHDAY = "Birthday"
     static let USER_PARAM_GENDER = "Gender"
+    
+    static let TIMESTAMP = "timestamp"
     
     static let PARAM_TYPE = "type"
     static let PARAM_COMMENTS = "comments"

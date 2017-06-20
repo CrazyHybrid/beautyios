@@ -12,6 +12,8 @@ import UIKit
 
 class StoreViewCell: UITableViewCell {
     
+    @IBOutlet weak var storeImage: UIImageView!
+    
 }
 
 class StoreListViewController: UIViewController {
@@ -32,6 +34,8 @@ class StoreListViewController: UIViewController {
         super.viewWillAppear(animated)
         
         viewNoMembership.isHidden = true
+        
+        self.getStoreMembership()
     }
     
     @IBAction func OnClickNotification(_ sender: Any) {
@@ -39,19 +43,51 @@ class StoreListViewController: UIViewController {
     
     @IBAction func OnClickLogoutMenu(_ sender: Any) {
     }
+    
+    func getStoreMembership()
+    {
+        let preferences = UserDefaults.standard
+        
+        let padoToken = preferences.string(forKey: User.PADO_TOKEN)
+        let currentTimeMillis = NSDate().timeIntervalSince1970 * 1000;
+        
+        let timestamp: String = String(format:"%.f", currentTimeMillis)
+        
+        APIRequestManager.getStoreMembershipsAPI(padoToken!, timestamp,
+                                                 completion: {(response, error) -> Void in
+                                                    
+                                                    if response != nil {
+                                                        
+                                                        do{
+                                                            let storeJSON = try JSONSerialization.jsonObject(with: (response?.data)!, options: .allowFragments) as? [String: Any]
+                                                            
+                                                            let store = storeJSON?["storeMemberships"] as? [[String: AnyObject]]
+                                                            
+                                                            print( store )
+
+                                                            
+                                                        }catch{
+                                                            print(error)
+                                                        }
+                                                        
+                                                        print( response )
+                                                        
+                                                        
+                                                    }else{
+                                                        
+                                                    }
+        })
+    }
 }
 
 extension StoreListViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.storeTableView.dequeueReusableCell(withIdentifier: "StoreViewCell", for: indexPath) as! StoreViewCell
+        let cell = self.storeTableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath) as! StoreViewCell
         
         return cell
     }

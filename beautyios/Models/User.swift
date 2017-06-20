@@ -32,7 +32,7 @@ class User: Object {
     
     dynamic var store_id = ""
     dynamic var customer_id = ""
-    
+    dynamic var pado_token = ""
     dynamic var pado_username = ""
     dynamic var pado_password = ""
     
@@ -44,6 +44,18 @@ class User: Object {
         return user
     }
     
+    static func setUser(_ username: String,_ password: String, _ token: String,  success: @escaping (User?) -> Void, failure: @escaping (String) -> Void) {
+        let realm = try! Realm()
+        try! realm.write {
+            let user = realm.create(User.self)
+            
+            user.pado_username = username
+            user.pado_password = password
+            user.pado_token = token
+            
+            success(user)
+        }
+    }
     
     func toString() {
         print("\(User.ONESIGNAL_ID): \(onesignal_id)")

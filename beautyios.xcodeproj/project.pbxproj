@@ -25,6 +25,20 @@
 		4C145D0C1EF6E1CE008A284F /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C145D0B1EF6E1CE008A284F /* StoreViewController.swift */; };
 		4C145D0E1EF6F0EF008A284F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C145D0D1EF6F0EF008A284F /* Assets.xcassets */; };
 		4C15196E1EF7204500BC57D9 /* StoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15196D1EF7204400BC57D9 /* StoreListViewController.swift */; };
+		4C1519711EF8967500BC57D9 /* CreateReservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1519701EF8967500BC57D9 /* CreateReservation.swift */; };
+		4C1519731EF8977D00BC57D9 /* CreateReservationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1519721EF8977D00BC57D9 /* CreateReservationService.swift */; };
+		4C1519771EF897D300BC57D9 /* CreateReservationEmployeeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1519761EF897D300BC57D9 /* CreateReservationEmployeeSchedule.swift */; };
+		4C1519791EF897F700BC57D9 /* CreateReservationConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1519781EF897F700BC57D9 /* CreateReservationConfirm.swift */; };
+		4C15197C1EF8983900BC57D9 /* AppointmentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15197B1EF8983900BC57D9 /* AppointmentsController.swift */; };
+		4C1519801EF898A800BC57D9 /* AppointmentsCanceledAppointmentsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15197F1EF898A800BC57D9 /* AppointmentsCanceledAppointmentsTab.swift */; };
+		4C1519821EF898E400BC57D9 /* CreateReservationComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1519811EF898E400BC57D9 /* CreateReservationComplete.swift */; };
+		4C1519851EF89A0C00BC57D9 /* AppointmentsCreateTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1519841EF89A0C00BC57D9 /* AppointmentsCreateTab.swift */; };
+		4C1519871EF89A2E00BC57D9 /* AppointmentsPastAppointmentsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1519861EF89A2E00BC57D9 /* AppointmentsPastAppointmentsTab.swift */; };
+		4C1519891EF89C2D00BC57D9 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1519881EF89C2D00BC57D9 /* DataProvider.swift */; };
+		4C15198C1EF89CCD00BC57D9 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15198B1EF89CCD00BC57D9 /* PostCell.swift */; };
+		4C15198E1EF89D7F00BC57D9 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C15198D1EF89D7F00BC57D9 /* PostCell.xib */; };
+		4C47F86F1EF99A5C00BF1BDF /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C47F86E1EF99A5B00BF1BDF /* APIRequestManager.swift */; };
+		4C47F8711EF9B19E00BF1BDF /* StoreMembership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C47F8701EF9B19E00BF1BDF /* StoreMembership.swift */; };
 		8364772344835106881DBAE0 /* Pods_beautyios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 513B49596FF41373F7EB02B8 /* Pods_beautyios.framework */; };
 		FF82CD0CE9C2A9FCD9320AA4 /* Pods_beautyiosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0A9AFCD6C2A62BCEA25DAB /* Pods_beautyiosUITests.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +85,20 @@
 		4C145D0B1EF6E1CE008A284F /* StoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreViewController.swift; path = Main/StoreViewController.swift; sourceTree = "<group>"; };
 		4C145D0D1EF6F0EF008A284F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C15196D1EF7204400BC57D9 /* StoreListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreListViewController.swift; path = Main/StoreListViewController.swift; sourceTree = "<group>"; };
+		4C1519701EF8967500BC57D9 /* CreateReservation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateReservation.swift; path = Reservation/CreateReservation.swift; sourceTree = "<group>"; };
+		4C1519721EF8977D00BC57D9 /* CreateReservationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateReservationService.swift; path = Reservation/CreateReservationService.swift; sourceTree = "<group>"; };
+		4C1519761EF897D300BC57D9 /* CreateReservationEmployeeSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateReservationEmployeeSchedule.swift; path = Reservation/CreateReservationEmployeeSchedule.swift; sourceTree = "<group>"; };
+		4C1519781EF897F700BC57D9 /* CreateReservationConfirm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateReservationConfirm.swift; path = Reservation/CreateReservationConfirm.swift; sourceTree = "<group>"; };
+		4C15197B1EF8983900BC57D9 /* AppointmentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentsController.swift; path = Appointments/AppointmentsController.swift; sourceTree = "<group>"; };
+		4C15197F1EF898A800BC57D9 /* AppointmentsCanceledAppointmentsTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentsCanceledAppointmentsTab.swift; path = Appointments/AppointmentsCanceledAppointmentsTab.swift; sourceTree = "<group>"; };
+		4C1519811EF898E400BC57D9 /* CreateReservationComplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateReservationComplete.swift; path = Reservation/CreateReservationComplete.swift; sourceTree = "<group>"; };
+		4C1519841EF89A0C00BC57D9 /* AppointmentsCreateTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentsCreateTab.swift; path = Appointments/AppointmentsCreateTab.swift; sourceTree = "<group>"; };
+		4C1519861EF89A2E00BC57D9 /* AppointmentsPastAppointmentsTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsPastAppointmentsTab.swift; sourceTree = "<group>"; };
+		4C1519881EF89C2D00BC57D9 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataProvider.swift; path = Utils/DataProvider.swift; sourceTree = "<group>"; };
+		4C15198B1EF89CCD00BC57D9 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostCell.swift; path = Cells/PostCell.swift; sourceTree = "<group>"; };
+		4C15198D1EF89D7F00BC57D9 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostCell.xib; path = Cells/PostCell.xib; sourceTree = "<group>"; };
+		4C47F86E1EF99A5B00BF1BDF /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
+		4C47F8701EF9B19E00BF1BDF /* StoreMembership.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreMembership.swift; path = Models/StoreMembership.swift; sourceTree = "<group>"; };
 		507DE4A3D124823617EE90AB /* Pods-beautyios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beautyios.release.xcconfig"; path = "Pods/Target Support Files/Pods-beautyios/Pods-beautyios.release.xcconfig"; sourceTree = "<group>"; };
 		513B49596FF41373F7EB02B8 /* Pods_beautyios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beautyios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		806627D4228EC8A546ADACA2 /* Pods-beautyiosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beautyiosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beautyiosTests/Pods-beautyiosTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +186,7 @@
 			children = (
 				4C145CF51EF67E57008A284F /* beautyTheme.swift */,
 				4C145D051EF6B976008A284F /* DBHelper.swift */,
+				4C1519881EF89C2D00BC57D9 /* DataProvider.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -165,6 +194,9 @@
 		4C145CED1EF67CDA008A284F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4C15198A1EF89CB700BC57D9 /* Cells */,
+				4C15197A1EF8980100BC57D9 /* Appointments */,
+				4C15196F1EF8963700BC57D9 /* Reservation */,
 				4C145D071EF6DEC9008A284F /* Main */,
 				4C145CEE1EF67CDA008A284F /* Auth */,
 			);
@@ -186,6 +218,7 @@
 			children = (
 				4C145CF71EF67F47008A284F /* beautyServer.swift */,
 				4C145CFF1EF68330008A284F /* AuthControllers.swift */,
+				4C47F86E1EF99A5B00BF1BDF /* APIRequestManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -195,6 +228,7 @@
 			children = (
 				4C145CFD1EF680D8008A284F /* User.swift */,
 				4C145D011EF683AC008A284F /* beautyObject.swift */,
+				4C47F8701EF9B19E00BF1BDF /* StoreMembership.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -214,6 +248,38 @@
 				4C145D091EF6E0FD008A284F /* Toast.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		4C15196F1EF8963700BC57D9 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				4C1519781EF897F700BC57D9 /* CreateReservationConfirm.swift */,
+				4C1519701EF8967500BC57D9 /* CreateReservation.swift */,
+				4C1519721EF8977D00BC57D9 /* CreateReservationService.swift */,
+				4C1519761EF897D300BC57D9 /* CreateReservationEmployeeSchedule.swift */,
+				4C1519811EF898E400BC57D9 /* CreateReservationComplete.swift */,
+			);
+			name = Reservation;
+			sourceTree = "<group>";
+		};
+		4C15197A1EF8980100BC57D9 /* Appointments */ = {
+			isa = PBXGroup;
+			children = (
+				4C15197B1EF8983900BC57D9 /* AppointmentsController.swift */,
+				4C15197F1EF898A800BC57D9 /* AppointmentsCanceledAppointmentsTab.swift */,
+				4C1519841EF89A0C00BC57D9 /* AppointmentsCreateTab.swift */,
+				4C1519861EF89A2E00BC57D9 /* AppointmentsPastAppointmentsTab.swift */,
+			);
+			name = Appointments;
+			sourceTree = "<group>";
+		};
+		4C15198A1EF89CB700BC57D9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4C15198B1EF89CCD00BC57D9 /* PostCell.swift */,
+				4C15198D1EF89D7F00BC57D9 /* PostCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		6CC4B7E60E76A046C7CBDAE1 /* Pods */ = {
@@ -358,6 +424,7 @@
 				4C145CA51EF67262008A284F /* LaunchScreen.storyboard in Resources */,
 				4C145D0E1EF6F0EF008A284F /* Assets.xcassets in Resources */,
 				4C145CA01EF67262008A284F /* Main.storyboard in Resources */,
+				4C15198E1EF89D7F00BC57D9 /* PostCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,18 +587,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C15197C1EF8983900BC57D9 /* AppointmentsController.swift in Sources */,
+				4C1519731EF8977D00BC57D9 /* CreateReservationService.swift in Sources */,
 				4C15196E1EF7204500BC57D9 /* StoreListViewController.swift in Sources */,
+				4C1519711EF8967500BC57D9 /* CreateReservation.swift in Sources */,
 				4C145D061EF6B976008A284F /* DBHelper.swift in Sources */,
+				4C47F8711EF9B19E00BF1BDF /* StoreMembership.swift in Sources */,
 				4C145D0A1EF6E0FD008A284F /* Toast.swift in Sources */,
 				4C145CF31EF67CDA008A284F /* LoginViewController.swift in Sources */,
+				4C1519851EF89A0C00BC57D9 /* AppointmentsCreateTab.swift in Sources */,
+				4C1519871EF89A2E00BC57D9 /* AppointmentsPastAppointmentsTab.swift in Sources */,
 				4C145C9D1EF67262008A284F /* ViewController.swift in Sources */,
 				4C145C9B1EF67262008A284F /* AppDelegate.swift in Sources */,
+				4C1519771EF897D300BC57D9 /* CreateReservationEmployeeSchedule.swift in Sources */,
 				4C145CF81EF67F47008A284F /* beautyServer.swift in Sources */,
+				4C1519821EF898E400BC57D9 /* CreateReservationComplete.swift in Sources */,
 				4C145D0C1EF6E1CE008A284F /* StoreViewController.swift in Sources */,
 				4C145CFE1EF680D8008A284F /* User.swift in Sources */,
 				4C145CF21EF67CDA008A284F /* ForgotPasswordViewController.swift in Sources */,
+				4C1519791EF897F700BC57D9 /* CreateReservationConfirm.swift in Sources */,
+				4C47F86F1EF99A5C00BF1BDF /* APIRequestManager.swift in Sources */,
+				4C1519891EF89C2D00BC57D9 /* DataProvider.swift in Sources */,
+				4C15198C1EF89CCD00BC57D9 /* PostCell.swift in Sources */,
 				4C145D001EF68330008A284F /* AuthControllers.swift in Sources */,
 				4C145CF41EF67CDA008A284F /* SignUpViewController.swift in Sources */,
+				4C1519801EF898A800BC57D9 /* AppointmentsCanceledAppointmentsTab.swift in Sources */,
 				4C145D021EF683AC008A284F /* beautyObject.swift in Sources */,
 				4C145CF61EF67E57008A284F /* beautyTheme.swift in Sources */,
 			);

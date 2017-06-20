@@ -46,9 +46,26 @@ extension LoginViewController {
             
             AuthControllers.oauthToken(loginEmailTextField.text!,
                                   loginPasswordTextField.text!,
-                                completion: {(response, error) -> Void in
+                                  completion: {(response, error) -> Void in
                                     
-                                    if response != nil{
+                                    let accessToken = response?.object(forKey: "access_token")
+                                    User.setUser(self.loginEmailTextField.text!, self.loginPasswordTextField.text!, accessToken as! String, success: { (user) in
+                                        let preferences = UserDefaults.standard
+                                        preferences.set(accessToken, forKey: User.PADO_TOKEN)
+                                        
+                                        let didSave = preferences.synchronize();
+                                        
+                                        print(accessToken ?? "")
+                                        self.updatePush()
+                                        print(didSave)
+                                        self.hideLoading()
+                                        self.performSegue(withIdentifier: "gotoMain", sender: sender)
+                                    }, failure: { (errorString) in
+                                        self.errorLabel.text = "아이디나 비밀번호가 올바르지 않습니다.";
+                                        self.errorLabel.isHidden = false;
+                                    })
+                                    /*
+                                    if response != nil && response?.object(forKey: "access_token") != nil {
                                         let accessToken = response?.object(forKey: "access_token")
                                         
                                         let preferences = UserDefaults.standard
@@ -65,7 +82,7 @@ extension LoginViewController {
                                     }else{
                                         self.errorLabel.text = "아이디나 비밀번호가 올바르지 않습니다.";
                                         self.errorLabel.isHidden = false;
-                                    }
+                                    }*/
                                     
             })
         }
@@ -75,12 +92,20 @@ extension LoginViewController {
         
         let preferences = UserDefaults.standard
         
-        let padoToken = preferences.string(forKey: User.PADO_TOKEN)!
-        let onesignalId = preferences.string(forKey: User.ONESIGNAL_ID)
-        let onesignalToken = preferences.string(forKey: User.ONESIGNAL_TOKEN)
+        let padoToken = preferences.string(forKey: User.PADO_TOKEN)
+        var onesignalId = preferences.string(forKey: User.ONESIGNAL_ID)
+        var onesignalToken = preferences.string(forKey: User.ONESIGNAL_TOKEN)
+        
+        if onesignalId == nil{
+            onesignalId = ""
+        }
+        
+        if onesignalToken == nil{
+            onesignalToken = ""
+        }
         
         AuthControllers.login(onesignalId!,
-                                   onesignalToken!, padoToken,
+                                   onesignalToken!, padoToken!,
                                    completion: {(response, error) -> Void in
                                     
                                     if response != nil{
