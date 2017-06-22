@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Material-com.cosmicmind.material.fonts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -102,17 +107,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>019F2B9243BFAD92C87C1A3328E19567</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>033B2F5EFC98402794E5FA4A2E42BD9F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1FA61B85121E16021BEC5D0C2707826E</key>
+		<key>2D377E2D25EE947FD4CAFFCD017E5DAA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2D4E7B8045322F3B1F3CD1EFA9F5C3C1</key>
+		<key>2F0C0F810568D3E82219429D9D870F04</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,27 +137,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>41F7A122CA51C2F07308220C0EB4DB11</key>
+		<key>3E0B58DA973A0D9BD6D0428B93181F30</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4E846E4AFBADB2A798BCAB496F9F4B92</key>
+		<key>4E766DDA1AE7CD244A30795198D694C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>547E169B2A9C767496C747D1C2FFB046</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>684CC308F65424CEB00714F037A22BC8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>78682C2B0239E4EF5BD7138E0FFA7765</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7A54A2622B92015A813BE7AC578855A1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7C2E331506696CA71F66A071959211EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -162,7 +172,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>906C9A5B6347CDE5719F49F5CFA7AFAA</key>
+		<key>9468EFBC28A5C75B5207207DB5D4563A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -172,7 +182,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E417C156629D20FF121579292EABE720</key>
+		<key>D9241B1B5AD03F20A858C80CEC733110</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -182,7 +192,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED4FE8BD96DDDC40ABAE123C29DD61C6</key>
+		<key>E67F16C0DAEA4C9907FD327864232D41</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -192,7 +202,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FEA491633D89BD7F1F790DA64C5A2B94</key>
+		<key>FF8D39EB0C54168D65FF57FB683D4E23</key>
 		<dict>
 			<key>primary</key>
 			<true/>
