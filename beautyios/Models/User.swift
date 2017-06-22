@@ -44,6 +44,14 @@ class User: Object {
         return user
     }
     
+    static func getUserToken() -> String? {
+        
+        let preferences = UserDefaults.standard
+        let padoToken = preferences.string(forKey: User.PADO_TOKEN)
+        
+        return padoToken
+    }
+    
     static func setUser(_ username: String,_ password: String, _ token: String,  success: @escaping (User?) -> Void, failure: @escaping (String) -> Void) {
         let realm = try! Realm()
         try! realm.write {

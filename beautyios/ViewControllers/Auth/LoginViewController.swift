@@ -21,7 +21,9 @@ class LoginViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let _ = User.getUser() {
+        let token = User.getUserToken()
+        
+        if token != "" && token != nil {
             self.performSegue(withIdentifier: "gotoMain", sender: self)
         }
     }    
@@ -49,41 +51,29 @@ extension LoginViewController {
                                   completion: {(response, error) -> Void in
                                     
                                     let accessToken = response?.object(forKey: "access_token")
-                                    User.setUser(self.loginEmailTextField.text!, self.loginPasswordTextField.text!, accessToken as! String, success: { (user) in
-                                        let preferences = UserDefaults.standard
-                                        preferences.set(accessToken, forKey: User.PADO_TOKEN)
-                                        
-                                        let didSave = preferences.synchronize();
-                                        
-                                        print(accessToken ?? "")
-                                        self.updatePush()
-                                        print(didSave)
-                                        self.hideLoading()
-                                        self.performSegue(withIdentifier: "gotoMain", sender: sender)
-                                    }, failure: { (errorString) in
-                                        self.errorLabel.text = "아이디나 비밀번호가 올바르지 않습니다.";
-                                        self.errorLabel.isHidden = false;
-                                    })
-                                    /*
-                                    if response != nil && response?.object(forKey: "access_token") != nil {
-                                        let accessToken = response?.object(forKey: "access_token")
-                                        
-                                        let preferences = UserDefaults.standard
-                                        preferences.set(accessToken, forKey: User.PADO_TOKEN)
-                                        
-                                        let didSave = preferences.synchronize();
-                                        
-                                        print(accessToken ?? "")
-                                        self.updatePush()
-                                        print(didSave)
-                                        self.hideLoading()
-                                        self.performSegue(withIdentifier: "gotoMain", sender: sender)
-                                        
-                                    }else{
-                                        self.errorLabel.text = "아이디나 비밀번호가 올바르지 않습니다.";
-                                        self.errorLabel.isHidden = false;
-                                    }*/
                                     
+                                    if accessToken != nil {
+                                        User.setUser(self.loginEmailTextField.text!, self.loginPasswordTextField.text!, accessToken as! String, success: { (user) in
+                                            let preferences = UserDefaults.standard
+                                            preferences.set(accessToken, forKey: User.PADO_TOKEN)
+                                        
+                                            let didSave = preferences.synchronize();
+                                        
+                                            print(accessToken ?? "")
+                                            self.updatePush()
+                                            print(didSave)
+                                            self.hideLoading()
+                                            self.performSegue(withIdentifier: "gotoMain", sender: sender)
+                                        }, failure: { (errorString) in
+                                            self.hideLoading()
+                                        })
+                                    }
+                                    else{
+                                        self.hideLoading()
+
+                                        self.errorLabel.text = "아이디나 비밀번호가 올바르지 않습니다.";
+                                        self.errorLabel.isHidden = false;
+                                    }
             })
         }
     }
@@ -120,8 +110,6 @@ extension LoginViewController {
     @IBAction func forgotPassword(_ sender: Any) {
         self.performSegue(withIdentifier: "gotoForgotPassword", sender: sender)
         
-//        let forgetVC = storyboard?.instantiateViewController(withIdentifier: "commentsVC") as! ForgotPasswordViewController
-//        self.navigationController?.pushViewController(forgetVC, animated: true)
         
     }
     @IBAction func signup(_ sender: Any) {

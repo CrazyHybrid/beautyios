@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import Kingfisher
 
 class StoreViewCell: UITableViewCell {
     
@@ -16,14 +16,17 @@ class StoreViewCell: UITableViewCell {
     
 }
 
-class StoreListViewController: UIViewController {
+class StoreListViewController: ViewController {
     
     
     @IBOutlet weak var viewMembership: UIView!
     @IBOutlet weak var storeTableView: UITableView!
     
     @IBOutlet weak var viewNoMembership: UIView!
+    @IBOutlet weak var badgeLabel: UILabel!
     
+    
+    var myStoreList = [[String:Any]]()
     
     
     override func viewDidLoad() {
@@ -42,10 +45,61 @@ class StoreListViewController: UIViewController {
     }
     
     @IBAction func OnClickLogoutMenu(_ sender: Any) {
+        
+        let menuArray = [KxMenuItem.init(" 로그아웃   ", image: UIImage(named: "Touch"), target: self, action: #selector(StoreListViewController.Logout(_:)))]
+        
+        
+        KxMenu.setTitleFont(UIFont(name: "HelveticaNeue", size: 17))
+        
+        //config
+        let options = OptionalConfiguration(arrowSize: 0,  //Indicates the arrow size
+            marginXSpacing: 7,
+            marginYSpacing: 7,
+            intervalSpacing: 25,
+            menuCornerRadius: 6,
+            maskToBackground: true,
+            shadowOfMenu: false,
+            hasSeperatorLine: true,
+            seperatorLineHasInsets: false,
+            textColor: Colour(R: 0, G: 0, B: 0),
+            menuBackgroundColor: Colour(R: 1, G: 1, B: 1)
+        )
+        
+        
+        KxMenu.show(in: self.view, from: (sender as AnyObject).frame, menuItems: menuArray, withOptions: options)
+        
+    }
+    
+    func Logout(_ sender: AnyObject) {
+        
+        print(sender)
+        
+        let preferences = UserDefaults.standard
+        
+        let padoToken = preferences.string(forKey: User.PADO_TOKEN)
+
+        AuthControllers.logout(padoToken!, completion: {(response, error) -> Void in
+            
+            User.setUser("", "", "", success: { (user) in
+                let preferences = UserDefaults.standard
+                preferences.set("", forKey: User.PADO_TOKEN)
+                
+                _ = preferences.synchronize();
+                
+                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
+                self.navigationController?.pushViewController(loginVC, animated: true)
+                
+                
+            }, failure: { (errorString) in
+            })
+        })
     }
     
     func getStoreMembership()
     {
+        
+        showLoading("")
+        
         let preferences = UserDefaults.standard
         
         let padoToken = preferences.string(forKey: User.PADO_TOKEN)
@@ -59,10 +113,12 @@ class StoreListViewController: UIViewController {
                                                     if response != nil {
                                                         
                                                         do{
-                                                            let storeJSON = try JSONSerialization.jsonObject(with: (response?.data)!, options: .allowFragments) as? [String: Any]
+                                                            let storeJSON = try JSONSerialization.jsonObject(with: response as! Data, options: .allowFragments) as? [String: Any]
                                                             
                                                             let store = storeJSON?["storeMemberships"] as? [[String: AnyObject]]
                                                             
+                                                            
+                                                            self.myStoreList = store!
                                                             print( store )
 
                                                             
@@ -70,10 +126,12 @@ class StoreListViewController: UIViewController {
                                                             print(error)
                                                         }
                                                         
-                                                        print( response )
-                                                        
-                                                        
+                                                        self.hideLoading()
+                                                        self.storeTableView.reloadData()
+                                                        self.viewMembership.isHidden = false
                                                     }else{
+                                                        self.hideLoading()
+                                                        self.viewNoMembership.isHidden = false
                                                         
                                                     }
         })
@@ -83,11 +141,17 @@ class StoreListViewController: UIViewController {
 extension StoreListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.myStoreList.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.storeTableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath) as! StoreViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath) as! StoreViewCell
+        
+        let storeDic = self.myStoreList[indexPath.row]
+        let url = storeDic["cardimage"] as! String
+        
+        cell.storeImage.kf.setImage(with: URL(string: url), placeholder: UIImage(named: "banner"), options: [.transition(ImageTransition.fade(1))], progressBlock: nil) { (image, error, cacheType, url) in
+        }
         
         return cell
     }
@@ -96,6 +160,10 @@ extension StoreListViewController: UITableViewDataSource {
 extension StoreListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.storeTableView.deselectRow(at: indexPath, animated: true)
+        
+        let storeVC = self.storyboard?.instantiateViewController(withIdentifier: "storeVC") as! StoreViewController
+        self.navigationController?.pushViewController(storeVC, animated: true)
+
         
     }
 }
