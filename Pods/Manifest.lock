@@ -3,6 +3,7 @@ PODS:
   - Alamofire (4.5.0)
   - CVCalendar (1.5.0)
   - IHKeyboardAvoiding (4.0)
+  - Kingfisher (3.10.2)
   - Material (2.6.3):
     - Material/Core (= 2.6.3)
   - Material/Core (2.6.3)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.4)
   - CVCalendar (~> 1.5.0)
   - IHKeyboardAvoiding
+  - Kingfisher
   - Material
   - OneSignal
   - RappleProgressHUD
@@ -41,6 +43,7 @@ SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   CVCalendar: 5d51a7bda1b9439b612de69d86a91a73befa1936
   IHKeyboardAvoiding: d1063551a2bed47cdbeab255e3aa5d7847d7efa8
+  Kingfisher: 7297492bf8cec9b2e2dee3519f2219948580d98e
   Material: af607a7ec0e9978ef85cf189a3d8ceeeb650400f
   OneSignal: da994bcf6a2efbdceaf71e389e1d05245c562899
   RappleProgressHUD: d29a931f7e867e9d9c3b88831f62e8366976eb41
@@ -52,6 +55,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
   ZiggeoSwiftSDK: 93a7231938742ec8f9d23c9464d40beeb4495edb
 
-PODFILE CHECKSUM: e29355ea05d135d6cc5bc2c0166cc8682b8d6a3e
+PODFILE CHECKSUM: e857717d8f2012b35a4728610b63b5f1296f8f4f
 
 COCOAPODS: 1.2.1
