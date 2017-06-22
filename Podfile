@@ -20,6 +20,7 @@ target 'beautyios' do
   pod 'RealmSwift'
   pod 'OneSignal'
   pod 'SQLite.swift'
+  pod 'Kingfisher'
 
   target 'beautyiosTests' do
     inherit! :search_paths
