@@ -79,7 +79,7 @@ class AuthControllers: beautyServer {
         
         let headerParams = [
             "Content-Type": "application/x-www-form-urlencoded",
-            AUTHORIZATION: token
+            AUTHORIZATION: "Bearer " + token
         ]
         
         Alamofire.request(URL(string:url)!,
