@@ -1,60 +1,21 @@
 //
-//  StoreViewController.swift
+//  StoreEmptyViewController.swift
 //  beautyios
 //
-//  Created by Michael on 6/18/17.
+//  Created by Michael on 6/22/17.
 //  Copyright © 2017 Michael. All rights reserved.
 //
 
 import Foundation
-import UIKit
 import Kingfisher
 
-
-
-class StoreViewController: ViewController {
+class StoreEmptyViewController: ViewController {
+    
+    @IBOutlet weak var imageStore: UIImageView!
     
     @IBOutlet weak var badgeLabel: UILabel!
-    @IBOutlet weak var storeTitle: UILabel!
     
-    @IBOutlet weak var stamplabel1: UILabel!
-    
-    @IBOutlet weak var stamplabel2: UILabel!
-    
-    @IBOutlet weak var stamplabel3: UILabel!
-    
-    @IBOutlet weak var stamplabel4: UILabel!
-    
-    @IBOutlet weak var stamplabel5: UILabel!
-    
-    @IBOutlet weak var stamplabel6: UILabel!
-    
-    @IBOutlet weak var stamplabel7: UILabel!
-    
-    @IBOutlet weak var stamplabel8: UILabel!
-    
-    @IBOutlet weak var stamplabel9: UILabel!
-    
-    @IBOutlet weak var stamplabel10: UILabel!
-    
-    @IBOutlet weak var stampDate: UILabel!
-    @IBOutlet weak var imgTitle: UIImageView!
-    
-    @IBOutlet weak var badgeProLabel: UILabel!
-    
-    @IBOutlet weak var mainScrol: UIScrollView!
-    
-    @IBOutlet weak var comingAppointView: UIView!
-    
-    @IBOutlet weak var comingAppointTableView: UITableView!
-    
-    @IBOutlet weak var myMembershipView: UIView!
-    
-    @IBOutlet weak var myMembershipTableView: UITableView!
-    
-    @IBOutlet weak var stampView: UIView!
-    
-    @IBOutlet weak var eventView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     
     var store_ID : Int = -1
@@ -63,6 +24,7 @@ class StoreViewController: ViewController {
     var single_Store : Bool = false
     
     var phoneNumber : String = ""
+   
     
     override func viewDidLoad() {
         
@@ -74,15 +36,15 @@ class StoreViewController: ViewController {
         requestStoreMembership()
     }
     
-    
-    @IBAction func onClickNotifButton(_ sender: Any) {
-    }
-    
     @IBAction func onClickBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func onClickNotiButton(_ sender: Any) {
+    }
+    
     @IBAction func onClickMenu(_ sender: Any) {
+        
         let menuArray = [KxMenuItem.init(" 로그아웃   ", image: UIImage(named: "Touch"), target: self, action: #selector(StoreListViewController.Logout(_:)))]
         
         
@@ -132,33 +94,11 @@ class StoreViewController: ViewController {
         })
     }
     
-    @IBAction func onClickAppointment(_ sender: Any) {
-        
-        let appointVC = self.storyboard?.instantiateViewController(withIdentifier: "appointVC") as! AppointmentsController
-        self.navigationController?.pushViewController(appointVC, animated: true)
-
-    }
-    
-    @IBAction func onClickDiary(_ sender: Any) {
-    }
-    
-    @IBAction func onClickMessage(_ sender: Any) {
-    }
-    
-    @IBAction func onClickProfile(_ sender: Any) {
-    }
-
-    @IBAction func onClickRecommend(_ sender: Any) {
-    }
-    
-    @IBAction func onClickStampInfo(_ sender: Any) {
-    }
-    
-    @IBAction func onClickPhoneCall(_ sender: Any) {
+    @IBAction func onClickCall(_ sender: Any) {
         
         let strPhone = self.phoneNumber.replacingOccurrences(of: "-", with: "", options: String.CompareOptions.literal, range: nil)
         let phone = "tel://" + strPhone
-        
+
         if let url = URL(string: phone){
             if #available(iOS 10, *){
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -167,13 +107,11 @@ class StoreViewController: ViewController {
                 UIApplication.shared.openURL(url)
             }
         }
-        
     }
-    
 }
 
-extension StoreViewController{
-
+extension StoreEmptyViewController{
+    
     func requestStoreMembership(){
         showLoading("")
         
@@ -184,21 +122,24 @@ extension StoreViewController{
         
         let timestamp: String = String(format:"%.f", currentTimeMillis)
         
-        APIRequestManager.getStoreMembershipAPI( store_ID, padoToken!, timestamp,
+        APIRequestManager.getStoreMembershipAPI(store_ID, padoToken!, timestamp,
                                                  completion: {(response, error) -> Void in
                                                     
                                                     if response != nil {
                                                         
+//                                                        do{
+//                                                            let storeJSON = try JSONSerialization.jsonObject(with: response as! Data, options: .allowFragments) as? [String: Any]
                                                         let title = response?.object(forKey: "title")
                                                         print( title )
-                                                        let imgTitle = response?.object(forKey: "cardimage") as! String
+                                                        let imgTitle = response?.object(forKey: "cardimage")
                                                         print( imgTitle )
-
-                                                        self.storeTitle.text = title as! String
                                                         
+                                                        self.phoneNumber = response?.object(forKey: "phone") as! String
                                                         
-                                                        self.imgTitle.kf.setImage(with: URL(string: imgTitle), placeholder: UIImage(named: "banner"), options: [.transition(ImageTransition.fade(1))], progressBlock: nil) { (image, error, cacheType, url) in
-                                                        }
+                                                        self.reloadView( title as! String, imgTitle as! String )
+//                                                        }catch{
+//                                                            print(error)
+//                                                        }
                                                         
                                                         self.hideLoading()
                                                     }else{
@@ -207,54 +148,14 @@ extension StoreViewController{
                                                     }
         })
     }
-}
+    
+    func reloadView(_ title: String, _ imgTitle: String){
+        
+        
+        titleLabel.text = title
+        
+        self.imageStore.kf.setImage(with: URL(string: imgTitle), placeholder: UIImage(named: "banner"), options: [.transition(ImageTransition.fade(1))], progressBlock: nil) { (image, error, cacheType, url) in
+        }
 
-extension StoreViewController{
-    
-    func reloadView(){
-        
-        
-        
-    }
-    
-    
-}
-
-extension StoreViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.myStoreList.count
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath) as! StoreViewCell
-        
-//        let storeDic = self.myStoreList[indexPath.row]
-//        let url = storeDic["cardimage"] as! String
-//        
-//        cell.storeImage.kf.setImage(with: URL(string: url), placeholder: UIImage(named: "banner"), options: [.transition(ImageTransition.fade(1))], progressBlock: nil) { (image, error, cacheType, url) in
-//        }
-        
-        return cell
     }
 }
-
-extension StoreViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.storeTableView.deselectRow(at: indexPath, animated: true)
-//        
-//        let storeDic = self.myStoreList[indexPath.row]
-//        
-//        let storeVC = self.storyboard?.instantiateViewController(withIdentifier: "storeVC") as! StoreViewController
-//        storeVC.store_ID = storeDic["store_id"] as! Int
-//        storeVC.store_Title = storeDic["title"] as! String
-//        storeVC.store_Type = storeDic["storetype"] as! Int
-//        storeVC.single_Store = false
-//        self.navigationController?.pushViewController(storeVC, animated: true)
-        
-        
-    }
-}
-
-

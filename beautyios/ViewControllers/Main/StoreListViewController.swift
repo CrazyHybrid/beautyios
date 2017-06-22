@@ -161,8 +161,27 @@ extension StoreListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.storeTableView.deselectRow(at: indexPath, animated: true)
         
-        let storeVC = self.storyboard?.instantiateViewController(withIdentifier: "storeVC") as! StoreViewController
-        self.navigationController?.pushViewController(storeVC, animated: true)
+        let storeDic = self.myStoreList[indexPath.row]
+        let store_Type = storeDic["storetype"] as! Int
+        
+        if store_Type == 100 {
+            let storeVC = self.storyboard?.instantiateViewController(withIdentifier: "storeVC") as! StoreViewController
+            storeVC.store_ID = storeDic["store_id"] as! Int
+            storeVC.store_Title = storeDic["title"] as! String
+            storeVC.single_Store = false
+            self.navigationController?.pushViewController(storeVC, animated: true)
+        }
+        else
+        {
+            let storeEmpVC = self.storyboard?.instantiateViewController(withIdentifier: "storeEmpVC") as! StoreEmptyViewController
+            let storeid =  storeDic["store_id"] as! Int
+            storeEmpVC.store_ID = storeid
+            let title = storeDic["title"] as! String
+            storeEmpVC.store_Title = title
+            storeEmpVC.single_Store = false
+            self.navigationController?.pushViewController(storeEmpVC, animated: true)
+            
+        }
 
         
     }

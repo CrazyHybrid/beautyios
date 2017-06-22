@@ -42,19 +42,17 @@ class APIRequestManager: beautyServer {
         }
     }
     
-    static func getStoreMembership(_ username: String, _ password: String, completion: @escaping (_ response: AnyObject?, _ error: NSError?) -> Void) {
+    static func getStoreMembershipAPI(_ storeId: Int, _ token: String, _ timestamp: String, completion: @escaping (_ response: AnyObject?, _ error: NSError?) -> Void) {
         
-        let url = getRequestUrl(oauthTokenUrl)
+        let url = getRequestUrl(getStoreMembership) + String(storeId)
         
         let headers = [
-            "Content-Type": "application/x-www-form-urlencoded"
+            "Content-Type": "application/x-www-form-urlencoded",
+            AUTHORIZATION: "Bearer " + token
         ]
         
         let body: Parameters = [
-            USER_PARAM_USERNAME: username,
-            USER_PARAM_PASSWORD: password,
-            USER_GRANT_TYPE: "password"
-            
+            TIMESTAMP: timestamp
         ]
         
         Alamofire.request(URL(string:url)!,

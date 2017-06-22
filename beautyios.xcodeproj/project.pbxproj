@@ -40,6 +40,7 @@
 		4C47F86F1EF99A5C00BF1BDF /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C47F86E1EF99A5B00BF1BDF /* APIRequestManager.swift */; };
 		4C47F8711EF9B19E00BF1BDF /* StoreMembership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C47F8701EF9B19E00BF1BDF /* StoreMembership.swift */; };
 		4C513F8C1EFAC46C0075084D /* NirKxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C513F8B1EFAC46B0075084D /* NirKxMenu.m */; };
+		4C513F9F1EFBB3A80075084D /* StoreEmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C513F9E1EFBB3A80075084D /* StoreEmptyViewController.swift */; };
 		8364772344835106881DBAE0 /* Pods_beautyios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 513B49596FF41373F7EB02B8 /* Pods_beautyios.framework */; };
 		FF82CD0CE9C2A9FCD9320AA4 /* Pods_beautyiosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0A9AFCD6C2A62BCEA25DAB /* Pods_beautyiosUITests.framework */; };
 /* End PBXBuildFile section */
@@ -100,9 +101,10 @@
 		4C15198D1EF89D7F00BC57D9 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostCell.xib; path = Cells/PostCell.xib; sourceTree = "<group>"; };
 		4C47F86E1EF99A5B00BF1BDF /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
 		4C47F8701EF9B19E00BF1BDF /* StoreMembership.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreMembership.swift; path = Models/StoreMembership.swift; sourceTree = "<group>"; };
-		4C513F881EFAC46B0075084D /* beautyios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "beautyios-Bridging-Header.h"; sourceTree = "<group>"; };
 		4C513F8A1EFAC46B0075084D /* NirKxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NirKxMenu.h; path = Views/KxMenu/NirKxMenu.h; sourceTree = "<group>"; };
 		4C513F8B1EFAC46B0075084D /* NirKxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NirKxMenu.m; path = Views/KxMenu/NirKxMenu.m; sourceTree = "<group>"; };
+		4C513F8D1EFB98BE0075084D /* beautyios-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "beautyios-Bridging-Header.h"; path = "Views/KxMenu/beautyios-Bridging-Header.h"; sourceTree = "<group>"; };
+		4C513F9E1EFBB3A80075084D /* StoreEmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreEmptyViewController.swift; path = Main/StoreEmptyViewController.swift; sourceTree = "<group>"; };
 		507DE4A3D124823617EE90AB /* Pods-beautyios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beautyios.release.xcconfig"; path = "Pods/Target Support Files/Pods-beautyios/Pods-beautyios.release.xcconfig"; sourceTree = "<group>"; };
 		513B49596FF41373F7EB02B8 /* Pods_beautyios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beautyios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		806627D4228EC8A546ADACA2 /* Pods-beautyiosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beautyiosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-beautyiosTests/Pods-beautyiosTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 		4C145D071EF6DEC9008A284F /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				4C513F9E1EFBB3A80075084D /* StoreEmptyViewController.swift */,
 				4C145D0B1EF6E1CE008A284F /* StoreViewController.swift */,
 				4C15196D1EF7204400BC57D9 /* StoreListViewController.swift */,
 			);
@@ -290,9 +293,9 @@
 		4C513F871EFAC4470075084D /* KxMenu */ = {
 			isa = PBXGroup;
 			children = (
+				4C513F8D1EFB98BE0075084D /* beautyios-Bridging-Header.h */,
 				4C513F8A1EFAC46B0075084D /* NirKxMenu.h */,
 				4C513F8B1EFAC46B0075084D /* NirKxMenu.m */,
-				4C513F881EFAC46B0075084D /* beautyios-Bridging-Header.h */,
 			);
 			name = KxMenu;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				4C145CFE1EF680D8008A284F /* User.swift in Sources */,
 				4C145CF21EF67CDA008A284F /* ForgotPasswordViewController.swift in Sources */,
 				4C1519791EF897F700BC57D9 /* CreateReservationConfirm.swift in Sources */,
+				4C513F9F1EFBB3A80075084D /* StoreEmptyViewController.swift in Sources */,
 				4C513F8C1EFAC46C0075084D /* NirKxMenu.m in Sources */,
 				4C47F86F1EF99A5C00BF1BDF /* APIRequestManager.swift in Sources */,
 				4C1519891EF89C2D00BC57D9 /* DataProvider.swift in Sources */,
@@ -789,7 +793,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = beatyios.beautyios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "beautyios/beautyios-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "beautyios/Views/KxMenu/beautyios-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -806,7 +810,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = beatyios.beautyios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "beautyios/beautyios-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "beautyios/Views/KxMenu/beautyios-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

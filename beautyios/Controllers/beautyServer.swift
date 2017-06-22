@@ -31,7 +31,7 @@ class beautyServer {
     
     //Store
     static let getStoreMemberships = "/api/store/getstorememberships"
-    static let getStoreMembership = "/api/appointment/getstoreservices"
+    static let getStoreMembership = "/api/store/getstoremembership/"
     static let getStoreServices = "/api/appointment/getstoreservices"
     static let getStoreSchedules = "/api/appointment/getstoreschedules"
     
