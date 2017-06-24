@@ -140,15 +140,29 @@ class StoreViewController: ViewController {
     }
     
     @IBAction func onClickDiary(_ sender: Any) {
+        let diaryVC = self.storyboard?.instantiateViewController(withIdentifier: "diaryVC") as! DiaryViewController
+        self.navigationController?.pushViewController(diaryVC, animated: true)
+        
     }
     
     @IBAction func onClickMessage(_ sender: Any) {
+        let ChatVC = self.storyboard?.instantiateViewController(withIdentifier: "chatVC") as! ChatViewController
+        self.navigationController?.pushViewController(ChatVC, animated: true)
+        
     }
     
     @IBAction func onClickProfile(_ sender: Any) {
+        
+        let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "profileVC") as! AppointmentsController
+        self.navigationController?.pushViewController(profileVC, animated: true)
+
     }
 
     @IBAction func onClickRecommend(_ sender: Any) {
+        
+        let referVC = self.storyboard?.instantiateViewController(withIdentifier: "referVC") as! AppointmentsController
+        self.navigationController?.pushViewController(referVC, animated: true)
+
     }
     
     @IBAction func onClickStampInfo(_ sender: Any) {

@@ -18,10 +18,8 @@ class CreateDiaryController: UIViewController
     @IBOutlet weak var titleDiary: UILabel!
     @IBOutlet weak var NotiLabel: UILabel!
     
-    
-    
-    
-    
+    var diaryNum: Int = 0
+    var diaryTitle: String = ""
     
     override func viewDidLoad() {
         
@@ -29,6 +27,21 @@ class CreateDiaryController: UIViewController
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        titleDiary.text = diaryTitle
+        
+        if diaryNum == 1{
+            
+        } else if diaryNum == 2 {
+            
+        } else if diaryNum == 3 {
+            
+        } else if diaryNum == 4 {
+            
+        } else if diaryNum == 5 {
+            
+        }
+        
     }
     
     @IBAction func onClickBack(_ sender: Any) {

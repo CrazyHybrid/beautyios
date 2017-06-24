@@ -11,13 +11,17 @@ import Photos
 import CoreLocation
 import Kingfisher
 
-class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,  UIImagePickerControllerDelegate {
+class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,  UIImagePickerControllerDelegate {
     
     //MARK: Properties
     @IBOutlet var inputBar: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var badgeLabel: UILabel!
+    @IBOutlet weak var chatUserLabel: UILabel!
+    
     override var inputAccessoryView: UIView? {
         get {
             self.inputBar.frame.size.height = self.barHeight
@@ -46,8 +50,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         self.navigationItem.title = "1:1문의"
         self.navigationItem.setHidesBackButton(true, animated: false)
         let icon = UIImage.init(named: "back")?.withRenderingMode(.alwaysOriginal)
-        let backButton = UIBarButtonItem.init(image: icon!, style: .plain, target: self, action: #selector(self.dismissSelf))
-        self.navigationItem.leftBarButtonItem = backButton
         
     }
     
@@ -66,29 +68,11 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
 //        Message.markMessagesRead(forUserID: self.currentUser!.id)
     }
     
-    //Hides current viewcontroller
-    func dismissSelf() {
-        if let navController = self.navigationController {
-            navController.popViewController(animated: true)
-        }
-    }
     
     func composeMessage(type: MessageType, content: Any)  {
 //        let message = Message.init(type: type, content: content, owner: .sender, timestamp: Int(Date().timeIntervalSince1970), isRead: false)
 //        Message.send(message: message, toID: self.currentUser!.id, completion: {(_) in
 //        })
-    }
-    
-    func checkLocationPermission() -> Bool {
-        var state = false
-        switch CLLocationManager.authorizationStatus() {
-        case .authorizedWhenInUse:
-            state = true
-        case .authorizedAlways:
-            state = true
-        default: break
-        }
-        return state
     }
     
     func animateExtraButtons(toHide: Bool)  {
@@ -127,16 +111,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
             self.imagePicker.sourceType = .camera
             self.imagePicker.allowsEditing = false
             self.present(self.imagePicker, animated: true, completion: nil)
-        }
-    }
-    
-    @IBAction func selectLocation(_ sender: Any) {
-        self.canSendLocation = true
-        self.animateExtraButtons(toHide: true)
-        if self.checkLocationPermission() {
-            self.locationManager.startUpdatingLocation()
-        } else {
-            self.locationManager.requestWhenInUseAuthorization()
         }
     }
     
@@ -250,7 +224,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         super.viewDidAppear(animated)
         self.inputBar.backgroundColor = UIColor.clear
         self.view.layoutIfNeeded()
-//        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.showKeyboard(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(ChatViewController.showKeyboard(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -263,6 +237,14 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         super.viewDidLoad()
         self.customization()
         self.fetchData()
+    }
+    
+    
+    @IBAction func onBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onClickNotiButton(_ sender: Any) {
     }
 }
 

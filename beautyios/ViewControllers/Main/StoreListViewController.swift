@@ -42,6 +42,9 @@ class StoreListViewController: ViewController {
     }
     
     @IBAction func OnClickNotification(_ sender: Any) {
+        
+        let notifisVC = self.storyboard?.instantiateViewController(withIdentifier: "notifisVC") as! NotificationsController
+        self.navigationController?.pushViewController(notifisVC, animated: true)
     }
     
     @IBAction func OnClickLogoutMenu(_ sender: Any) {

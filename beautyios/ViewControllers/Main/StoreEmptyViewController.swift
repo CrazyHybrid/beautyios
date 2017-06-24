@@ -41,6 +41,10 @@ class StoreEmptyViewController: ViewController {
     }
     
     @IBAction func onClickNotiButton(_ sender: Any) {
+        
+        let notifisVC = self.storyboard?.instantiateViewController(withIdentifier: "notifisVC") as! NotificationsController
+        self.navigationController?.pushViewController(notifisVC, animated: true)
+        
     }
     
     @IBAction func onClickMenu(_ sender: Any) {
