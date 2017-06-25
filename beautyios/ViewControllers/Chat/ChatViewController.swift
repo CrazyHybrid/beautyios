@@ -43,13 +43,21 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     //MARK: Methods
     func customization() {
         self.imagePicker.delegate = self
+        
+        
+        self.tableView.register(UINib(nibName: "SenderCell", bundle: nil), forCellReuseIdentifier: "Sender")
+        self.tableView.register(UINib(nibName: "SenderImageCell", bundle: nil), forCellReuseIdentifier: "SenderImage")
+        self.tableView.register(UINib(nibName: "ReceiverCell", bundle: nil), forCellReuseIdentifier: "Receiver")
+        self.tableView.register(UINib(nibName: "ReceiverImageCell", bundle: nil), forCellReuseIdentifier: "ReceiverImage")
+        self.tableView.register(UINib(nibName: "DefaulReceiverCell", bundle: nil), forCellReuseIdentifier: "DefaulReceiverCell")
+        
+        
         self.tableView.estimatedRowHeight = self.barHeight
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.contentInset.bottom = self.barHeight
         self.tableView.scrollIndicatorInsets.bottom = self.barHeight
         self.navigationItem.title = "1:1문의"
         self.navigationItem.setHidesBackButton(true, animated: false)
-        let icon = UIImage.init(named: "back")?.withRenderingMode(.alwaysOriginal)
         
     }
     
@@ -155,39 +163,54 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let ReceiverCell = tableView.dequeueReusableCell(withIdentifier: "Receiver", for: indexPath) as! ReceiverCell
+        let DefaultReceiverCell = tableView.dequeueReusableCell(withIdentifier: "DefaultReceiver", for: indexPath) as! DefaulReceiverCell
+        let ReceiverImageCell = tableView.dequeueReusableCell(withIdentifier: "ReceiverImage", for: indexPath) as! ReceiverImageCell
+        let SenderCell = tableView.dequeueReusableCell(withIdentifier: "Sender", for: indexPath) as! SenderCell
+        let SenderImageCell = tableView.dequeueReusableCell(withIdentifier: "SenderImage", for: indexPath) as! SenderImageCell
+        
         if self.items[indexPath.row].send_or_receive {
         
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Receiver", for: indexPath) as! ReceiverCell
-            cell.clearCellData()
             if self.items[indexPath.row].messagetype == 0 {
-            
-                cell.message.text = self.items[indexPath.row].message
+                
+                ReceiverCell.clearCellData()
+
+                ReceiverCell.message.text = self.items[indexPath.row].message
+                
+                return ReceiverCell
             }
             else if self.items[indexPath.row].messagetype == 10{
                 let url = self.items[indexPath.row].message
                 
-                cell.messageBackground.kf.setImage(with: URL(string: url), placeholder: UIImage(named: "banner"), options: [.transition(ImageTransition.fade(1))], progressBlock: nil) { (image, error, cacheType, url) in
+                ReceiverImageCell.clearCellData()
+
+                
+                ReceiverImageCell.imgmessage.kf.setImage(with: URL(string: url), placeholder: UIImage(named: "banner"), options: [.transition(ImageTransition.fade(1))], progressBlock: nil) { (image, error, cacheType, url) in
                 }
+                
+                return ReceiverImageCell
 
             }
-            return cell
+            
         }
         else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Sender", for: indexPath) as! SenderCell
-            cell.clearCellData()
-            
             if self.items[indexPath.row].messagetype == 0{
-                cell.message.text = self.items[indexPath.row].message
+                SenderCell.clearCellData()
+
+                SenderCell.message.text = self.items[indexPath.row].message
+                return SenderCell
             }
             else if self.items[indexPath.row].messagetype == 10{
                 let url = self.items[indexPath.row].message
-                
-                cell.messageBackground.kf.setImage(with: URL(string: url), placeholder: UIImage(named: "banner"), options: [.transition(ImageTransition.fade(1))], progressBlock: nil) { (image, error, cacheType, url) in
+                SenderImageCell.clearCellData()
+
+                SenderImageCell.imgmessage.kf.setImage(with: URL(string: url), placeholder: UIImage(named: "banner"), options: [.transition(ImageTransition.fade(1))], progressBlock: nil) { (image, error, cacheType, url) in
                 }
-            
+                return SenderImageCell
             }
-            return cell
         }
+        
+        return DefaultReceiverCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

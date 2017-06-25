@@ -27,42 +27,116 @@ import UIKit
 
 class SenderCell: UITableViewCell {
     
-    @IBOutlet weak var profilePic: RoundedImageView!
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var messagetime: UILabel!
+
     @IBOutlet weak var message: UITextView!
-    @IBOutlet weak var messageBackground: UIImageView!
     
     func clearCellData()  {
         self.message.text = nil
         self.message.isHidden = false
-        self.messageBackground.image = nil
+        self.messagetime.text = nil
+        self.messagetime.isHidden = false
+        self.logo.image = nil
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        self.message.textContainerInset = UIEdgeInsetsMake(5, 5, 5, 5)
-        self.messageBackground.layer.cornerRadius = 15
-        self.messageBackground.clipsToBounds = true
+        self.logo.layer.cornerRadius = 25
+        self.logo.clipsToBounds = true
     }
 }
 
-class ReceiverCell: UITableViewCell {
+class SenderImageCell: UITableViewCell {
     
-    @IBOutlet weak var message: UITextView!
-    @IBOutlet weak var messageBackground: UIImageView!
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var messagetime: UILabel!
+
+    @IBOutlet weak var imgmessage: UIImageView!
     
     func clearCellData()  {
-        self.message.text = nil
-        self.message.isHidden = false
-        self.messageBackground.image = nil
+        self.messagetime.text = nil
+        self.messagetime.isHidden = false
+        self.imgmessage.image = nil
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        self.message.textContainerInset = UIEdgeInsetsMake(5, 5, 5, 5)
-        self.messageBackground.layer.cornerRadius = 15
-        self.messageBackground.clipsToBounds = true
+        self.logo.layer.cornerRadius = 25
+        self.logo.masksToBounds = true
+    }
+}
+
+
+class ReceiverCell: UITableViewCell {
+    
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var messagetime: UILabel!
+
+    @IBOutlet weak var message: UITextView!
+    
+    func clearCellData()  {
+        self.message.text = nil
+        self.message.isHidden = false
+        self.messagetime.text = nil
+        self.messagetime.isHidden = false
+        
+        self.logo.image = nil
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.selectionStyle = .none
+        self.logo.layer.cornerRadius = 25
+        self.logo.clipsToBounds = true
+    }
+}
+
+class DefaulReceiverCell: UITableViewCell {
+    
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var messagetime: UILabel!
+    
+    @IBOutlet weak var message: UITextView!
+    
+    func clearCellData()  {
+        self.message.text = nil
+        self.message.isHidden = false
+        self.messagetime.text = nil
+        self.messagetime.isHidden = false
+        
+        self.logo.image = nil
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.selectionStyle = .none
+        self.logo.layer.cornerRadius = 25
+        self.logo.clipsToBounds = true
+    }
+}
+
+class ReceiverImageCell: UITableViewCell {
+    
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var messagetime: UILabel!
+
+    @IBOutlet weak var imgmessage: UIImageView!
+    
+    
+    func clearCellData()  {
+        self.messagetime.text = nil
+        self.messagetime.isHidden = false
+        self.imgmessage.image = nil
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.selectionStyle = .none
+        self.logo.layer.cornerRadius = 25
+        self.logo.masksToBounds = true
     }
 }
 

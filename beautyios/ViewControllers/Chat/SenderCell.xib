@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -11,12 +11,82 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SenderCell" customModule="beautyios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Or2-EU-gaW">
+                    <rect key="frame" x="330" y="15" width="70" height="70"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chat_triangle_right_dark" translatesAutoresizingMaskIntoConstraints="NO" id="J93-aS-ah6">
+                            <rect key="frame" x="0.0" y="20" width="10" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="10" id="YB2-fu-ZRY"/>
+                                <constraint firstAttribute="height" constant="10" id="hp6-7b-Jaj"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile" translatesAutoresizingMaskIntoConstraints="NO" id="mso-y1-bHD">
+                            <rect key="frame" x="20" y="0.0" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="GD3-1c-8to"/>
+                                <constraint firstAttribute="width" constant="50" id="Qo5-u6-QB7"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM 3:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfX-41-qVG">
+                            <rect key="frame" x="20" y="51" width="50" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="19" id="edN-RW-Q7N"/>
+                                <constraint firstAttribute="width" constant="50" id="uWU-YR-Lsp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="LfX-41-qVG" firstAttribute="width" secondItem="mso-y1-bHD" secondAttribute="width" id="1KH-fE-EPG"/>
+                        <constraint firstAttribute="width" constant="70" id="AWX-mv-6DQ"/>
+                        <constraint firstItem="mso-y1-bHD" firstAttribute="top" secondItem="Or2-EU-gaW" secondAttribute="top" id="Bq8-dS-EH9"/>
+                        <constraint firstItem="LfX-41-qVG" firstAttribute="centerX" secondItem="mso-y1-bHD" secondAttribute="centerX" id="PFH-Lf-8S2"/>
+                        <constraint firstItem="LfX-41-qVG" firstAttribute="top" secondItem="mso-y1-bHD" secondAttribute="bottom" constant="1" id="ZTL-Mp-9i8"/>
+                        <constraint firstItem="J93-aS-ah6" firstAttribute="leading" secondItem="Or2-EU-gaW" secondAttribute="leading" id="c7R-jc-uVK"/>
+                        <constraint firstItem="mso-y1-bHD" firstAttribute="leading" secondItem="J93-aS-ah6" secondAttribute="trailing" constant="10" id="gnk-fU-lzl"/>
+                        <constraint firstAttribute="height" constant="70" id="nHg-Go-KWZ"/>
+                        <constraint firstAttribute="trailing" secondItem="mso-y1-bHD" secondAttribute="trailing" id="xtV-Gj-jJf"/>
+                        <constraint firstAttribute="bottom" secondItem="LfX-41-qVG" secondAttribute="bottom" id="yFS-97-4PZ"/>
+                        <constraint firstItem="mso-y1-bHD" firstAttribute="centerY" secondItem="J93-aS-ah6" secondAttribute="centerY" id="yrL-B1-PxF"/>
+                    </constraints>
+                </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="페이스케어예약 시간 문의 좀 드리려구요." textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="hAv-he-c3U">
+                    <rect key="frame" x="16" y="20" width="314" height="42"/>
+                    <color key="backgroundColor" red="0.28627450980392155" green="0.30196078431372547" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hAv-he-c3U" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="5XP-Iy-eCK"/>
+                <constraint firstItem="Or2-EU-gaW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="P0R-hz-Wb2"/>
+                <constraint firstItem="Or2-EU-gaW" firstAttribute="leading" secondItem="hAv-he-c3U" secondAttribute="trailing" id="ldq-Z2-sjJ"/>
+                <constraint firstAttribute="bottom" secondItem="hAv-he-c3U" secondAttribute="bottom" constant="38" id="ltl-yu-5a9"/>
+                <constraint firstItem="hAv-he-c3U" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="tqP-Ql-ga1"/>
+                <constraint firstAttribute="trailing" secondItem="Or2-EU-gaW" secondAttribute="trailing" constant="14" id="yPX-pI-LxZ"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="logo" destination="mso-y1-bHD" id="uHU-sP-Leb"/>
+                <outlet property="message" destination="hAv-he-c3U" id="aRB-1Q-h17"/>
+                <outlet property="messagetime" destination="LfX-41-qVG" id="PMT-bo-17W"/>
+            </connections>
+            <point key="canvasLocation" x="26" y="52"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_chat_triangle_right_dark" width="100" height="100"/>
+        <image name="ic_profile" width="104" height="104"/>
+    </resources>
 </document>

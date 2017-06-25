@@ -11,12 +11,91 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+        <view contentMode="scaleToFill" id="E4t-x4-6df" customClass="ReceiverImageCell" customModule="beautyios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hh-1u-bkP">
+                    <rect key="frame" x="14" y="15" width="70" height="70"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chat_trinagle_left" translatesAutoresizingMaskIntoConstraints="NO" id="cBF-fC-d7i">
+                            <rect key="frame" x="60" y="20" width="10" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="0Tw-yQ-rnd"/>
+                                <constraint firstAttribute="width" constant="10" id="hfC-J7-lEw"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile" translatesAutoresizingMaskIntoConstraints="NO" id="AaK-Mi-oYf">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="oxa-Yz-x7U"/>
+                                <constraint firstAttribute="height" constant="50" id="vyc-nH-rVR"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM 3:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbE-mc-R6Y">
+                            <rect key="frame" x="0.0" y="51" width="50" height="12"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="1sR-kk-YhA"/>
+                                <constraint firstAttribute="height" constant="12" id="lQE-Js-nTd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="AaK-Mi-oYf" firstAttribute="top" secondItem="9hh-1u-bkP" secondAttribute="top" id="0gu-ON-7c2"/>
+                        <constraint firstAttribute="trailing" secondItem="cBF-fC-d7i" secondAttribute="trailing" id="4PE-YY-Sfs"/>
+                        <constraint firstAttribute="width" constant="70" id="Dhv-cr-H9v"/>
+                        <constraint firstAttribute="bottom" secondItem="RbE-mc-R6Y" secondAttribute="bottom" constant="7" id="E3M-SE-meq"/>
+                        <constraint firstItem="RbE-mc-R6Y" firstAttribute="centerX" secondItem="AaK-Mi-oYf" secondAttribute="centerX" id="NUB-Iz-MvM"/>
+                        <constraint firstAttribute="width" constant="70" id="ULb-n6-TKn"/>
+                        <constraint firstAttribute="height" constant="70" id="VIX-Ol-2yU"/>
+                        <constraint firstItem="RbE-mc-R6Y" firstAttribute="top" secondItem="AaK-Mi-oYf" secondAttribute="bottom" constant="1" id="cHm-EJ-Bwr"/>
+                        <constraint firstItem="AaK-Mi-oYf" firstAttribute="leading" secondItem="9hh-1u-bkP" secondAttribute="leading" id="ftI-rn-RGu"/>
+                        <constraint firstItem="cBF-fC-d7i" firstAttribute="leading" secondItem="AaK-Mi-oYf" secondAttribute="trailing" constant="10" id="hg7-1o-zdY"/>
+                        <constraint firstItem="cBF-fC-d7i" firstAttribute="centerY" secondItem="AaK-Mi-oYf" secondAttribute="centerY" id="iVn-ap-mHZ"/>
+                        <constraint firstAttribute="height" constant="70" id="uDP-ss-Mu0"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0V-ph-yFg">
+                    <rect key="frame" x="84" y="20" width="314" height="260"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VZ6-TH-eM9" customClass="RoundedImageView" customModule="beautyios" customModuleProvider="target">
+                            <rect key="frame" x="10" y="5" width="294" height="250"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="VZ6-TH-eM9" firstAttribute="leading" secondItem="o0V-ph-yFg" secondAttribute="leading" constant="10" id="4RQ-3r-Hnu"/>
+                        <constraint firstItem="VZ6-TH-eM9" firstAttribute="top" secondItem="o0V-ph-yFg" secondAttribute="top" constant="5" id="FCw-pe-xSx"/>
+                        <constraint firstAttribute="bottom" secondItem="VZ6-TH-eM9" secondAttribute="bottom" constant="5" id="uRK-wQ-w6D"/>
+                        <constraint firstAttribute="trailing" secondItem="VZ6-TH-eM9" secondAttribute="trailing" constant="10" id="yMN-Y6-oHa"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9hh-1u-bkP" firstAttribute="top" secondItem="E4t-x4-6df" secondAttribute="top" constant="15" id="BAn-Pl-HbW"/>
+                <constraint firstItem="9hh-1u-bkP" firstAttribute="leading" secondItem="E4t-x4-6df" secondAttribute="leading" constant="14" id="Nup-77-tV2"/>
+                <constraint firstAttribute="bottom" secondItem="o0V-ph-yFg" secondAttribute="bottom" constant="20" id="o69-wN-20T"/>
+                <constraint firstAttribute="trailing" secondItem="o0V-ph-yFg" secondAttribute="trailing" constant="16" id="oQm-x1-Rad"/>
+                <constraint firstItem="o0V-ph-yFg" firstAttribute="top" secondItem="E4t-x4-6df" secondAttribute="top" constant="20" id="q29-je-0Ri"/>
+                <constraint firstItem="o0V-ph-yFg" firstAttribute="leading" secondItem="9hh-1u-bkP" secondAttribute="trailing" id="vUv-b3-eEy"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imgmessage" destination="VZ6-TH-eM9" id="zEG-XU-2GU"/>
+                <outlet property="logo" destination="AaK-Mi-oYf" id="fZ2-57-n0w"/>
+                <outlet property="messagetime" destination="RbE-mc-R6Y" id="YDL-Fh-BLP"/>
+            </connections>
         </view>
     </objects>
+    <resources>
+        <image name="ic_chat_trinagle_left" width="100" height="100"/>
+        <image name="ic_profile" width="104" height="104"/>
+    </resources>
 </document>
