@@ -45,9 +45,9 @@ class StoreMembership{
     static let REVIEW_APPOINTMENTS = "reviewableAppointments"
     
     
-    var id = ""
-    var store_id = ""
-    var customer_id = ""
+    var id = 0
+    var store_id = 0
+    var customer_id = 0
     var title = ""
     var logo = ""
     var cardimage = ""
@@ -58,10 +58,10 @@ class StoreMembership{
     var address = ""
     var address2 = ""
     var website = ""
-    var credits = ""
-    var creditexpiration = ""
-    var complimentary_credits = ""
-    var complimentary_creditexpiration = ""
+    var credits = 0
+    var creditexpiration : NSArray? = nil
+    var complimentary_credits : NSArray? = nil
+    var complimentary_creditexpiration : NSArray? = nil
     var stamps = ""
     var stampdesc = ""
     var photo1 = ""
@@ -71,20 +71,20 @@ class StoreMembership{
     var photo5 = ""
     var storetype = ""
     var referraldescription = ""
-    var numsurveys = ""
-    var stampcards = ""
-    var tickets = ""
-    var promotions = ""
-    var posts = ""
-    var upcomingAppointments = ""
-    var reviewableAppointments = ""
+    var numsurveys = 0
+    var stampcards : NSArray? = nil
+    var tickets : NSArray? = nil
+    var promotions : NSArray? = nil
+    var posts : NSArray? = nil
+    var upcomingAppointments : NSArray? = nil
+    var reviewableAppointments : NSArray? = nil
     
     static func getStoreMembership(_ dict: [String:Any]) -> StoreMembership? {
         let storeMembership = StoreMembership()
        
-        storeMembership.id = getStringValue(ID, dict)
-        storeMembership.store_id = getStringValue(STORE_ID, dict)
-        storeMembership.customer_id = getStringValue(CUSTOMER_ID, dict)
+        storeMembership.id = getIntValue(ID, dict)
+        storeMembership.store_id = getIntValue(STORE_ID, dict)
+        storeMembership.customer_id = getIntValue(CUSTOMER_ID, dict)
         storeMembership.title = getStringValue(TITLE, dict)
         storeMembership.logo = getStringValue(LOGO, dict)
         storeMembership.cardimage = getStringValue(CARDIMAGE, dict)
@@ -95,10 +95,10 @@ class StoreMembership{
         storeMembership.address = getStringValue(ADDRESS, dict)
         storeMembership.address2 = getStringValue(ADDRESS2, dict)
         storeMembership.website = getStringValue(WEBSITE, dict)
-        storeMembership.credits = getStringValue(CREDITS, dict)
-        storeMembership.creditexpiration = getStringValue(CREDIT_EXPIR, dict)
-        storeMembership.complimentary_credits = getStringValue(COMP_CREDITS, dict)
-        storeMembership.complimentary_creditexpiration = getStringValue(COMP_CREDIT_EXPIR, dict)
+        storeMembership.credits = getIntValue(CREDITS, dict)
+        storeMembership.creditexpiration = getArrayValue(CREDIT_EXPIR, dict)! as NSArray
+        storeMembership.complimentary_credits = getArrayValue(COMP_CREDITS, dict)! as NSArray
+        storeMembership.complimentary_creditexpiration = getArrayValue(COMP_CREDIT_EXPIR, dict)! as NSArray
         storeMembership.stamps = getStringValue(STAMPS, dict)
         storeMembership.stampdesc = getStringValue(STAMPDESC, dict)
         storeMembership.photo1 = getStringValue(PHOTO1, dict)
@@ -108,15 +108,282 @@ class StoreMembership{
         storeMembership.photo5 = getStringValue(PHOTO5, dict)
         storeMembership.storetype = getStringValue(STORE_TYPE, dict)
         storeMembership.referraldescription = getStringValue(REF_DESC, dict)
-        storeMembership.numsurveys = getStringValue(NUM_SURVEYS, dict)
-        storeMembership.stampcards = getStringValue(STAMP_CARD, dict)
-        storeMembership.tickets = getStringValue(TICKETS, dict)
-        storeMembership.promotions = getStringValue(PROMOTIONS, dict)
-        storeMembership.posts = getStringValue(POSTS, dict)
-        storeMembership.upcomingAppointments = getStringValue(UPCOM_APPOINTMENTS, dict)
-        storeMembership.reviewableAppointments = getStringValue(REVIEW_APPOINTMENTS, dict)
+        storeMembership.numsurveys = getIntValue(NUM_SURVEYS, dict)
+        storeMembership.stampcards = getArrayValue(STAMP_CARD, dict)! as NSArray
+        storeMembership.tickets = getArrayValue(TICKETS, dict)! as NSArray
+        storeMembership.promotions = getArrayValue(PROMOTIONS, dict)! as NSArray
+        storeMembership.posts = getArrayValue(POSTS, dict)! as NSArray
+        storeMembership.upcomingAppointments = getArrayValue(UPCOM_APPOINTMENTS, dict)! as NSArray
+        storeMembership.reviewableAppointments = getArrayValue(REVIEW_APPOINTMENTS, dict)! as NSArray
 
         return storeMembership
     }
     
+}
+
+class Ticket {
+    static let ID = "id"
+    static let TITLE = "title"
+    static let EXPIREDATE = "expiredate"
+    static let QTY = "qty"
+    static let TICKETTYPE = "tickettype"
+    static let STATUS = "status"
+    
+    var id = 0
+    var title = ""
+    var expiredate = ""
+    var qty = 0
+    var type = 0
+    var status = 0
+    
+    static func getTicket(_ key: String, _ dict: [String:Any]) -> Ticket? {
+        let ticket = Ticket()
+        ticket.id = getIntValue(ID, dict)
+        ticket.title = getStringValue(TITLE, dict)
+        ticket.expiredate = getStringValue(EXPIREDATE, dict)
+        ticket.qty = getIntValue(QTY, dict)
+        ticket.type = getIntValue(TICKETTYPE, dict)
+        ticket.status = getIntValue(STATUS, dict)
+        
+        return ticket
+    }
+}
+
+class Post {
+    static let ID = "id"
+    static let TITLE = "title"
+    static let AUTHOR = "author"
+    static let TEASER = "teaser"
+    static let THUMBNAIL = "thumbnail"
+    static let MEDIACONTENT = "mediaContent"
+    static let POSTDATE = "postDate"
+    static let POSTTYPE = "postType"
+    static let STATUS = "status"
+    static let CREATED = "created"
+    static let MODIFIED = "modified"
+    
+    var id = 0
+    var title = ""
+    var author = ""
+    var teaser = ""
+    var thumbnail = ""
+    var mediacontent = ""
+    var postdate = ""
+    var posttype = 0
+    var status = 0
+    var created = ""
+    var modified = ""
+    
+    static func getPost( _ key: String, _ dict: [String:Any]) -> Post? {
+        let post = Post()
+        post.id = getIntValue(ID, dict)
+        post.title = getStringValue(TITLE, dict)
+        post.author = getStringValue(AUTHOR, dict)
+        post.teaser = getStringValue(TEASER, dict)
+        post.thumbnail = getStringValue(THUMBNAIL, dict)
+        post.mediacontent = getStringValue(MEDIACONTENT, dict)
+        post.postdate = getStringValue(POSTDATE, dict)
+        post.posttype = getIntValue(POSTTYPE, dict)
+        post.status = getIntValue(STATUS, dict)
+        post.created = getStringValue(CREATED, dict)
+        post.modified = getStringValue(MODIFIED, dict)
+        
+        return post
+    }
+}
+
+class Promotion {
+    static let ID = "id"
+    static let TITLE = "title"
+    static let EXPIREDATE = "expiredate"
+    static let QTY = "qty"
+    static let TICKETTYPE = "tickettype"
+    static let STATUS = "status"
+    
+    var id = 0
+    var title = ""
+    var expiredate = ""
+    var qty = 0
+    var type = 0
+    var status = 0
+    
+    static func getPromotion(_ key: String, _ dict: [String:Any]) -> Promotion? {
+        let promotion = Promotion()
+        promotion.id = getIntValue(ID, dict)
+        promotion.title = getStringValue(TITLE, dict)
+        promotion.expiredate = getStringValue(EXPIREDATE, dict)
+        promotion.qty = getIntValue(QTY, dict)
+        promotion.type = getIntValue(TICKETTYPE, dict)
+        promotion.status = getIntValue(STATUS, dict)
+        
+        return promotion
+    }
+}
+
+class StampCard {
+    static let ID = "id"
+    static let TITLE = "title"
+    static let EXPIREDATE = "expiredate"
+    static let QTY = "qty"
+    static let TICKETTYPE = "tickettype"
+    static let STATUS = "status"
+    
+    var id = 0
+    var title = ""
+    var expiredate = ""
+    var qty = 0
+    var type = 0
+    var status = 0
+    
+    static func getStampCard(_ key: String, _ dict: [String:Any]) -> StampCard? {
+        let stampcard = StampCard()
+        stampcard.id = getIntValue(ID, dict)
+        stampcard.title = getStringValue(TITLE, dict)
+        stampcard.expiredate = getStringValue(EXPIREDATE, dict)
+        stampcard.qty = getIntValue(QTY, dict)
+        stampcard.type = getIntValue(TICKETTYPE, dict)
+        stampcard.status = getIntValue(STATUS, dict)
+        
+        return stampcard
+    }
+}
+
+class CreditExpire {
+    static let ID = "id"
+    static let TITLE = "title"
+    static let EXPIREDATE = "expiredate"
+    static let QTY = "qty"
+    static let TICKETTYPE = "tickettype"
+    static let STATUS = "status"
+    
+    var id = 0
+    var title = ""
+    var expiredate = ""
+    var qty = 0
+    var type = 0
+    var status = 0
+    
+    static func getCreditExpire(_ key: String, _ dict: [String:Any]) -> CreditExpire? {
+        let ticket = CreditExpire()
+        ticket.id = getIntValue(ID, dict)
+        ticket.title = getStringValue(TITLE, dict)
+        ticket.expiredate = getStringValue(EXPIREDATE, dict)
+        ticket.qty = getIntValue(QTY, dict)
+        ticket.type = getIntValue(TICKETTYPE, dict)
+        ticket.status = getIntValue(STATUS, dict)
+        
+        return ticket
+    }
+}
+
+class CompCredit {
+    static let ID = "id"
+    static let TITLE = "title"
+    static let EXPIREDATE = "expiredate"
+    static let QTY = "qty"
+    static let TICKETTYPE = "tickettype"
+    static let STATUS = "status"
+    
+    var id = 0
+    var title = ""
+    var expiredate = ""
+    var qty = 0
+    var type = 0
+    var status = 0
+    
+    static func getCompCredit(_ key: String, _ dict: [String:Any]) -> CompCredit? {
+        let ticket = CompCredit()
+        ticket.id = getIntValue(ID, dict)
+        ticket.title = getStringValue(TITLE, dict)
+        ticket.expiredate = getStringValue(EXPIREDATE, dict)
+        ticket.qty = getIntValue(QTY, dict)
+        ticket.type = getIntValue(TICKETTYPE, dict)
+        ticket.status = getIntValue(STATUS, dict)
+        
+        return ticket
+    }
+}
+
+class CompCreditExpire {
+    static let ID = "id"
+    static let TITLE = "title"
+    static let EXPIREDATE = "expiredate"
+    static let QTY = "qty"
+    static let TICKETTYPE = "tickettype"
+    static let STATUS = "status"
+    
+    var id = 0
+    var title = ""
+    var expiredate = ""
+    var qty = 0
+    var type = 0
+    var status = 0
+    
+    static func getCompCreditExpire(_ key: String, _ dict: [String:Any]) -> CompCreditExpire? {
+        let ticket = CompCreditExpire()
+        ticket.id = getIntValue(ID, dict)
+        ticket.title = getStringValue(TITLE, dict)
+        ticket.expiredate = getStringValue(EXPIREDATE, dict)
+        ticket.qty = getIntValue(QTY, dict)
+        ticket.type = getIntValue(TICKETTYPE, dict)
+        ticket.status = getIntValue(STATUS, dict)
+        
+        return ticket
+    }
+}
+
+class UpcomAppointment {
+    static let ID = "id"
+    static let TITLE = "title"
+    static let EXPIREDATE = "expiredate"
+    static let QTY = "qty"
+    static let TICKETTYPE = "tickettype"
+    static let STATUS = "status"
+    
+    var id = 0
+    var title = ""
+    var expiredate = ""
+    var qty = 0
+    var type = 0
+    var status = 0
+    
+    static func getUpcomAppointment(_ key: String, _ dict: [String:Any]) -> UpcomAppointment? {
+        let ticket = UpcomAppointment()
+        ticket.id = getIntValue(ID, dict)
+        ticket.title = getStringValue(TITLE, dict)
+        ticket.expiredate = getStringValue(EXPIREDATE, dict)
+        ticket.qty = getIntValue(QTY, dict)
+        ticket.type = getIntValue(TICKETTYPE, dict)
+        ticket.status = getIntValue(STATUS, dict)
+        
+        return ticket
+    }
+}
+
+class ReviewAppointment {
+    static let ID = "id"
+    static let TITLE = "title"
+    static let EXPIREDATE = "expiredate"
+    static let QTY = "qty"
+    static let TICKETTYPE = "tickettype"
+    static let STATUS = "status"
+    
+    var id = 0
+    var title = ""
+    var expiredate = ""
+    var qty = 0
+    var type = 0
+    var status = 0
+    
+    static func getReviewAppointment(_ key: String, _ dict: [String:Any]) -> ReviewAppointment? {
+        let ticket = ReviewAppointment()
+        ticket.id = getIntValue(ID, dict)
+        ticket.title = getStringValue(TITLE, dict)
+        ticket.expiredate = getStringValue(EXPIREDATE, dict)
+        ticket.qty = getIntValue(QTY, dict)
+        ticket.type = getIntValue(TICKETTYPE, dict)
+        ticket.status = getIntValue(STATUS, dict)
+        
+        return ticket
+    }
 }

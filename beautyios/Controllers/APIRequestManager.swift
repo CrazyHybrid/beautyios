@@ -64,7 +64,7 @@ class APIRequestManager: beautyServer {
                 
                 switch response.result{
                 case .success:
-                    completion(response.result.value as AnyObject, nil)
+                    completion(response.data as AnyObject, nil)
                 case .failure(let error):
                     completion(nil, error as NSError )
                 }
