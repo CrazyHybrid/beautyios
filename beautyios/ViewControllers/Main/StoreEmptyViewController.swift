@@ -131,25 +131,24 @@ extension StoreEmptyViewController{
                                                     
                                                     if response != nil {
                                                         
-//                                                        do{
-//                                                            let storeJSON = try JSONSerialization.jsonObject(with: response as! Data, options: .allowFragments) as? [String: Any]
-                                                        let title = response?.object(forKey: "title")
-                                                        print( title )
-                                                        let imgTitle = response?.object(forKey: "cardimage")
-                                                        print( imgTitle )
                                                         
-                                                        self.phoneNumber = response?.object(forKey: "phone") as! String
-                                                        
-                                                        self.reloadView( title as! String, imgTitle as! String )
-//                                                        }catch{
-//                                                            print(error)
-//                                                        }
-                                                        
+                                                        do{
+                                                            let storeJSON = try JSONSerialization.jsonObject(with: response as! Data, options: .allowFragments) as? [String: Any]
+                                                            
+                                                            self.phoneNumber = storeJSON?["phone"] as! String
+                                                            
+                                                            self.reloadView( storeJSON?["title"] as! String, storeJSON?["cardimage"] as! String )
+                                                            
+                                                        }catch{
+                                                            print(error)
+                                                        }
                                                         self.hideLoading()
                                                     }else{
                                                         self.hideLoading()
                                                         
                                                     }
+                                                    
+                                                        
         })
     }
     

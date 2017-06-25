@@ -56,6 +56,12 @@ class StoreViewController: ViewController {
     
     @IBOutlet weak var eventView: UIView!
     
+    @IBOutlet weak var postView: UIView!
+    @IBOutlet weak var postTableView: UITableView!
+    
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var storeInfoView: UIView!
+    
     
     var store_ID : Int = -1
     var store_Title : String = ""
@@ -63,6 +69,23 @@ class StoreViewController: ViewController {
     var single_Store : Bool = false
     
     var phoneNumber : String = ""
+    
+    var myStoreList = [[String:Any]]()
+    var myTicketList = [[String:Any]]()
+    var myPostList = [[String:Any]]()
+    var myStampCardList = [[String:Any]]()
+    var myPromotionList = [[String:Any]]()
+    var myUpcomingAppointList = [[String:Any]]()
+    var myReviewableAppointList = [[String:Any]]()
+    var myCompCreditDate : NSDate? = nil
+    
+    var myStrReferral = ""
+    var myStoreImageURL = ""
+    var myStoreTitle = ""
+    var myNewsurveyNum = 0
+    var myCredits = 0
+    var storePhone = ""
+    var StampDesc = ""
     
     override func viewDidLoad() {
         
@@ -153,14 +176,18 @@ class StoreViewController: ViewController {
     
     @IBAction func onClickProfile(_ sender: Any) {
         
-        let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "profileVC") as! AppointmentsController
+        let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "profileVC") as! ProfileSurveyController
+        profileVC.strPhoneNumber = storePhone
         self.navigationController?.pushViewController(profileVC, animated: true)
 
     }
 
     @IBAction func onClickRecommend(_ sender: Any) {
         
-        let referVC = self.storyboard?.instantiateViewController(withIdentifier: "referVC") as! AppointmentsController
+        let referVC = self.storyboard?.instantiateViewController(withIdentifier: "referVC") as! ReferralViewController
+        referVC.strReferral = myStrReferral
+        referVC.imgStore = myStoreImageURL
+        referVC.strPhoneNumber = storePhone
         self.navigationController?.pushViewController(referVC, animated: true)
 
     }
@@ -196,24 +223,39 @@ extension StoreViewController{
         let padoToken = preferences.string(forKey: User.PADO_TOKEN)
         let currentTimeMillis = NSDate().timeIntervalSince1970 * 1000;
         
-        let timestamp: String = String(format:"%.f", currentTimeMillis)
+        let timestamp = String(format:"%.f", currentTimeMillis)
         
         APIRequestManager.getStoreMembershipAPI( store_ID, padoToken!, timestamp,
                                                  completion: {(response, error) -> Void in
                                                     
                                                     if response != nil {
                                                         
-                                                        let title = response?.object(forKey: "title")
-                                                        print( title )
-                                                        let imgTitle = response?.object(forKey: "cardimage") as! String
-                                                        print( imgTitle )
-
-                                                        self.storeTitle.text = title as! String
-                                                        
-                                                        
-                                                        self.imgTitle.kf.setImage(with: URL(string: imgTitle), placeholder: UIImage(named: "banner"), options: [.transition(ImageTransition.fade(1))], progressBlock: nil) { (image, error, cacheType, url) in
+                                                        do{
+                                                            let storeJSON = try JSONSerialization.jsonObject(with: response as! Data, options: .allowFragments) as? [String: Any]
+                                                            
+                                                            self.myStampCardList = (storeJSON?["stampcards"] as? [[String: AnyObject]])!
+                                                            self.myTicketList = (storeJSON?["tickets"] as? [[String: AnyObject]])!
+                                                            self.myPromotionList = (storeJSON?["promotions"] as? [[String: AnyObject]])!
+                                                            self.myPostList = (storeJSON?["posts"] as? [[String: AnyObject]])!
+                                                            self.myUpcomingAppointList = (storeJSON?["upcomingAppointments"] as? [[String: AnyObject]])!
+                                                            self.myReviewableAppointList = (storeJSON?["reviewableAppointments"] as? [[String: AnyObject]])!
+                                                            self.myCompCreditDate = storeJSON?["complimentary_credits"] as? NSDate
+                                                            
+                                                            self.myNewsurveyNum = storeJSON?["numsurveys"] as! Int
+                                                            self.myStrReferral = storeJSON?["referraldescription"] as! String
+                                                            
+                                                            
+                                                            self.myCredits = storeJSON?["credits"] as! Int
+                                                            self.myStoreTitle = storeJSON?["title"] as! String
+                                                            self.myStoreImageURL = storeJSON?["cardimage"] as! String
+                                                            self.storePhone = storeJSON?["phone"] as! String
+                                                            self.StampDesc = storeJSON?["stampdesc"] as! String
+                                                            
+                                                            self.reloadView()
+                                                            
+                                                        }catch{
+                                                            print(error)
                                                         }
-                                                        
                                                         self.hideLoading()
                                                     }else{
                                                         self.hideLoading()
@@ -227,11 +269,12 @@ extension StoreViewController{
     
     func reloadView(){
         
-        
-        
+
+        self.badgeProLabel.text = String(format: "%d", myNewsurveyNum )
+        self.storeTitle.text = self.myStoreTitle
+        self.imgTitle.kf.setImage(with: URL(string: self.myStoreImageURL), placeholder: UIImage(named: "banner"), options: [.transition(ImageTransition.fade(1))], progressBlock: nil) { (image, error, cacheType, url) in
+        }
     }
-    
-    
 }
 
 extension StoreViewController: UITableViewDataSource {

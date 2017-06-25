@@ -45,6 +45,7 @@ class StoreListViewController: ViewController {
         
         let notifisVC = self.storyboard?.instantiateViewController(withIdentifier: "notifisVC") as! NotificationsController
         self.navigationController?.pushViewController(notifisVC, animated: true)
+
     }
     
     @IBAction func OnClickLogoutMenu(_ sender: Any) {
@@ -122,8 +123,6 @@ class StoreListViewController: ViewController {
                                                             
                                                             
                                                             self.myStoreList = store!
-                                                            print( store )
-
                                                             
                                                         }catch{
                                                             print(error)
@@ -168,7 +167,7 @@ extension StoreListViewController: UITableViewDelegate {
         let store_Type = storeDic["storetype"] as! Int
         
         if store_Type == 100 {
-            let storeVC = self.storyboard?.instantiateViewController(withIdentifier: "storeVC") as! StoreViewController
+            let storeVC = self.storyboard?.instantiateViewController(withIdentifier: "storeNewVC") as! StoreNewViewController
             storeVC.store_ID = storeDic["store_id"] as! Int
             storeVC.store_Title = storeDic["title"] as! String
             storeVC.single_Store = false
