@@ -1,5 +1,5 @@
 //
-//  CategoryViewController.swift
+//  CreditViewController.swift
 //  beautyios
 //
 //  Created by Michael on 6/25/17.
@@ -9,10 +9,10 @@
 import Foundation
 
 
-class CategoryViewController : UIViewController{
+
+class CreditViewController : UIViewController{
     
     
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         
@@ -20,8 +20,6 @@ class CategoryViewController : UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        heightConstraint.constant = 72
     }
     
 }

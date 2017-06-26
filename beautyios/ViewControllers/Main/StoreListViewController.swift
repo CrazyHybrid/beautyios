@@ -167,7 +167,7 @@ extension StoreListViewController: UITableViewDelegate {
         let store_Type = storeDic["storetype"] as! Int
         
         if store_Type == 100 {
-            let storeVC = self.storyboard?.instantiateViewController(withIdentifier: "storeNewVC") as! StoreNewViewController
+            let storeVC = self.storyboard?.instantiateViewController(withIdentifier: "storeVC") as! StoreViewController
             storeVC.store_ID = storeDic["store_id"] as! Int
             storeVC.store_Title = storeDic["title"] as! String
             storeVC.single_Store = false

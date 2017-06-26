@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class PostCell: UITableViewCell {
+class PostsCell: UITableViewCell {
     
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var postName: UILabel!
