@@ -16,7 +16,7 @@ target 'beautyios' do
   pod 'SwiftMessages'
   pod 'RappleProgressHUD'
   pod 'SwiftyJSON'
-  pod 'ZiggeoSwiftSDK'
+  #pod 'ZiggeoSwiftSDK'
   pod 'RealmSwift'
   pod 'OneSignal'
   pod 'SQLite.swift'

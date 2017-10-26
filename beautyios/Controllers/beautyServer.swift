@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-import ZiggeoSwiftFramework
 
 class beautyServer {
     static let RESPONSE_SUCCESS = "ok"
@@ -167,12 +166,5 @@ class beautyServer {
                 completion(response, success, failure)
         }
     }
-    
-    fileprivate static var ziggeo: Ziggeo! = nil
-    static func getZiggeo() -> Ziggeo {
-        if ziggeo == nil {
-            ziggeo = Ziggeo(token: ZIGGEO_APP_TOKEN)
-        }
-        return ziggeo
-    }
+
 }

@@ -56,7 +56,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.contentInset.bottom = self.barHeight
         self.tableView.scrollIndicatorInsets.bottom = self.barHeight
-        self.navigationItem.title = "1:1문의"
+//        self.navigationItem.title = "1:1문의"
         self.navigationItem.setHidesBackButton(true, animated: false)
         
     }
